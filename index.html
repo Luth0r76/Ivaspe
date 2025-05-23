@@ -102,7 +102,8 @@
         }
 
         .btn {
-            background: linear-gradient(135deg, #4299e1, #3182ce);
+            /* Color de botón principal cambiado a púrpura */
+            background: linear-gradient(135deg, #4c509e, #01099b);
             color: white;
             border: none;
             padding: 12px 25px;
@@ -117,10 +118,14 @@
 
         .btn:hover {
             transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 8px 15px rgba(66, 153, 225, 0.3);
+            /* Sombra ajustada al nuevo color */
+            box-shadow: 0 8px 15px rgba(107, 70, 193, 0.3);
         }
         .btn-secondary {
             background: linear-gradient(135deg, #a0aec0, #718096);
+        }
+         .btn-secondary:hover {
+            box-shadow: 0 8px 15px rgba(113, 128, 150, 0.3);
         }
         .btn-training {
              background: linear-gradient(135deg, #48bb78, #38a169);
@@ -133,15 +138,16 @@
         #countdown {
             font-size: 5em;
             font-weight: bold;
-            color: #4299e1;
+            color: #6b46c1; /* Ajustado al nuevo color principal */
             margin: 30px 0;
+            text-align: center;
         }
 
         .question-container {
             padding: 25px;
             background: #f8fafc;
             border-radius: 12px;
-            border-left: 5px solid #4299e1;
+            border-left: 5px solid #6b46c1; /* Ajustado al nuevo color principal */
             margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
@@ -162,7 +168,7 @@
         .question-number {
             font-size: 1em;
             font-weight: bold;
-            color: #4299e1;
+            color: #6b46c1; /* Ajustado al nuevo color principal */
         }
 
         .question-text {
@@ -189,15 +195,15 @@
         }
 
         .option:hover {
-            border-color: #4299e1;
+            border-color: #805ad5; /* Ajustado al nuevo color principal */
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(66, 153, 225, 0.2);
+            box-shadow: 0 5px 15px rgba(128, 90, 213, 0.2);
         }
 
         .option.selected {
-            background: #a3bfdc; /* Un color neutro para la selección antes de corregir */
-            color: #2d3748;
-            border-color: #6b90bd;
+            background: #b794f4; /* Un color púrpura más claro para la selección */
+            color: white;
+            border-color: #805ad5;
         }
 
         .option.correct {
@@ -211,7 +217,7 @@
             color: white !important;
             border-color: #e53e3e !important;
         }
-        .option.user-selected-incorrect { /* Estilo para la incorrecta que el usuario seleccionó */
+        .option.user-selected-incorrect { 
             background: #f56565 !important;
             color: white !important;
             border-color: #c53030 !important;
@@ -261,7 +267,7 @@
             width: 100%;
             background-color: #e2e8f0;
             border-radius: 8px;
-            height: 10px; /* Más alto */
+            height: 10px; 
             margin-bottom: 25px;
             overflow: hidden;
         }
@@ -270,21 +276,20 @@
             height: 100%;
             width: 0%;
             background: linear-gradient(90deg, #48bb78, #38a169);
-            border-radius: 8px 0 0 8px; /* Redondear solo el inicio si no está lleno */
+            border-radius: 8px 0 0 8px; 
             transition: width 0.5s ease-in-out;
         }
         .progress-bar.full {
-             border-radius: 8px; /* Redondear todo cuando está lleno */
+             border-radius: 8px; 
         }
 
-        /* Estilos para la selección de temas */
         .topic-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
-        .topic-button {
+        .topic-button { /* Hereda de .btn, por lo que su color de fondo también cambiará */
             padding: 20px;
             font-size: 1.1em;
             border-radius: 10px;
@@ -294,20 +299,18 @@
         }
         .topic-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            /* La sombra se hereda de .btn:hover y se ajustará automáticamente */
         }
 
-        /* Footer */
         .footer {
             background: #2d3748;
             color: white;
             padding: 20px;
             text-align: center;
             width: 100%;
-            margin-top: auto; /* Empuja el footer hacia abajo */
+            margin-top: auto; 
             box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
         }
-         /* Modal for messages */
         .modal {
             display: none;
             position: fixed;
@@ -381,7 +384,7 @@
 
         <div id="modeSelectionScreen" class="content-section">
             <h2>🕹️ Elige un Modo de Test</h2>
-            <button class="btn" onclick="startTest('normal')">🚀 Modo Normal (Todas las preguntas)</button>
+            <button class="btn" onclick="startTest('normal')">🚀 Modo Normal</button>
             <button class="btn btn-training" onclick="showTopicSelection()">🎯 Modo Entrenamiento</button>
             <button class="btn btn-secondary" onclick="showScreen('instructionsScreen')">Volver a Instrucciones</button>
         </div>
@@ -442,13 +445,12 @@
     <script>
         // --- VARIABLES GLOBALES ---
         let currentQuestionIndex = 0;
-        // let questions = []; // Esta variable no es necesaria si allQuestions es la fuente única y se filtra en loadedQuestions
-        let userAnswers = []; // Almacenará las respuestas del usuario [{questionGlobalIndex, answer}]
-        let testMode = 'normal'; // 'normal' o 'training'
-        let selectedTopic = '';   // Para modo entrenamiento
+        let userAnswers = []; 
+        let testMode = 'normal'; 
+        let selectedTopic = '';   
         let score = 0;
         let countdownTimer;
-        let loadedQuestions = []; // Preguntas filtradas para el test actual
+        let loadedQuestions = []; 
 
         // --- DATOS DE PREGUNTAS ---
         const allQuestions = [
@@ -1345,23 +1347,23 @@
                 category: "Tácticas Policiales", emoji: "👮",
                 questionText: "El sistema nervioso central se integra de:",
                 options: [ 
-                    { text: "Encéfalo y médula espinal", value: "a" }, // Opción más precisa
-                    { text: "Sistema nervioso simpático y parasimpático", value: "b" }, // Estos son del SNA
+                    { text: "Encéfalo o médula espinal", value: "a" }, // Opción más precisa
+                    { text: "Sistema nervioso simpático", value: "b" }, // Estos son del SNA
                     { text: "Sistema nervioso periférico y autónomo", value: "c" },
                     { text: "Cerebro, cerebelo y bulbo raquídeo", value: "d" } // Partes del encéfalo
                 ],
-                correctAnswer: "a" // Corregido para mayor precisión conceptual
+                correctAnswer: "b" 
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
                 questionText: "El Sistema nervioso simpático es parte del:",
                 options: [ 
-                    { text: "Sistema nervioso central", value: "a" },
-                    { text: "Sistema nervioso autónomo (o vegetativo)", value: "b" }, // Opción más precisa
-                    { text: "Sistema nervioso somático", value: "c" },
+                    { text: "Cortex cerebral", value: "a" },
+                    { text: "Respuesta automática", value: "b" }, // Opción más precisa
+                    { text: "Respuesta razonada", value: "c" },
                     { text: "Sistema nervioso periférico exclusivamente", value: "d" }
                 ],
-                correctAnswer: "b" // Corregido para mayor precisión conceptual
+                correctAnswer: "b" 
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
@@ -1501,7 +1503,6 @@
             score = 0;
 
             if (mode === 'normal') {
-                // Cargar TODAS las preguntas para el modo normal y barajarlas
                 loadedQuestions = shuffleArray([...allQuestions]); 
                 if (loadedQuestions.length === 0) {
                     showMessage("Error", "No hay preguntas cargadas. Por favor, añade preguntas.");
