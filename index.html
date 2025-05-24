@@ -15,8 +15,10 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding-top: 120px; /* Aumentado para dar espacio al navbar + progress bar */
+            /* padding-top inicial, se ajustará con JS si es necesario en móvil */
+            padding-top: 110px; /* Ajustado para navbar con barra de progreso por defecto */
             animation: gradientShift 15s ease infinite;
+            transition: padding-top 0.3s ease; /* Para suavizar el cambio de padding */
         }
 
         @keyframes gradientShift {
@@ -31,7 +33,7 @@
         .navbar {
             background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
             color: white;
-            padding: 15px 30px; /* Padding original */
+            padding: 10px 20px; /* Padding reducido para navbar más compacto */
             text-align: center;
             position: fixed;
             top: 0;
@@ -39,53 +41,54 @@
             width: 100%;
             z-index: 1000;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            display: flex; /* Para alinear elementos internos */
-            flex-direction: column; /* Apilar nombre y barra de progreso */
-            align-items: center; /* Centrar horizontalmente */
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
         }
 
         .academy-name {
-            font-size: 1.8em;
+            font-size: 1.6em; /* Tamaño base del logo */
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            margin-bottom: 10px; /* Espacio antes de la barra de progreso */
+            gap: 8px; /* Espacio reducido */
+            margin-bottom: 8px; 
+            transition: font-size 0.3s ease; /* Transición para suavizar cambio de tamaño */
         }
 
         .robot-icon {
-            font-size: 1em;
+            font-size: 0.9em; /* Tamaño base del icono */
             animation: bounce 2s ease-in-out infinite;
+            transition: font-size 0.3s ease;
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-8px); }
-            60% { transform: translateY(-4px); }
+            40% { transform: translateY(-6px); } /* Bounce más sutil */
+            60% { transform: translateY(-3px); }
         }
         
-        /* Estilos para la barra de progreso global DENTRO DEL NAVBAR */
         .global-progress-wrapper-navbar {
             width: 100%;
             max-width: 900px; 
-            padding: 0 15px; /* Menor padding para que no se salga del navbar */
+            padding: 0 10px; 
             box-sizing: border-box;
-            margin-top: 5px; /* Pequeño margen superior */
+            margin-top: 5px; 
         }
 
         .progress-info-text-navbar {
             text-align: right;
-            font-size: 0.8em; /* Más pequeño para el navbar */
-            color: #e2e8f0; /* Un gris claro para el texto */
-            margin-bottom: 3px; /* Menor margen */
+            font-size: 0.8em; 
+            color: #e2e8f0; 
+            margin-bottom: 3px; 
         }
 
         .progress-container-navbar { 
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.2); /* Fondo más sutil para la barra */
-            border-radius: 6px; /* Más pequeño */
-            height: 8px;  /* Más delgada */
+            background-color: rgba(255, 255, 255, 0.2); 
+            border-radius: 6px; 
+            height: 8px;  
             overflow: hidden;
             box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
         }
@@ -93,16 +96,29 @@
         .progress-bar-navbar {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, #68d391, #48bb78); /* Un verde más brillante */
+            background: linear-gradient(90deg, #68d391, #48bb78); 
             border-radius: 6px; 
             transition: width 0.5s ease-in-out;
+        }
+
+        /* Ajustes para móvil cuando el test está activo */
+        @media (max-width: 768px) {
+            body.test-mode-active {
+                padding-top: 95px; /* Padding reducido cuando el logo es más pequeño */
+            }
+            body.test-mode-active .navbar .academy-name {
+                font-size: 1.2em; /* Logo más pequeño en móvil durante el test */
+            }
+            body.test-mode-active .navbar .robot-icon {
+                font-size: 0.8em; /* Icono más pequeño en móvil durante el test */
+            }
         }
 
 
         .container {
             max-width: 900px;
             width: 95%;
-            margin: 20px auto 20px auto; /* Margen superior para separarlo del navbar */
+            margin: 20px auto 20px auto; 
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             border-radius: 20px;
@@ -1439,7 +1455,7 @@
                 category: "Mercancías Peligrosas (ADR)", emoji: "🔥",
                 questionText: "En el caso de los objetos no embalados, el marcado de mercancía peligrosa deberá figurar sobre:",
                 options: [
-                    { text: "El palet que lo transporta", value: "a" },
+                    { text: "El palet che lo transporta", value: "a" },
                     { text: "Únicamente en un bulto representativo", value: "b" },
                     { text: "Sobre el propio objeto", value: "c" },
                     { text: "En la documentación del vehículo", value: "d"}
@@ -1570,7 +1586,6 @@
         const resultsScreen = document.getElementById('resultsScreen');
         const questionContainer = document.getElementById('questionContainer');
         
-        // Elementos de la barra de progreso global
         const globalProgressWrapperNavbar = document.getElementById('globalProgressWrapperNavbar');
         const progressBarNavbar = document.getElementById('progressBarNavbar');
         const progressInfoTextNavbar = document.getElementById('progressInfoTextNavbar');
@@ -1603,11 +1618,13 @@
                 console.error("Error: Pantalla no encontrada -", screenId);
             }
 
-            // Mostrar u ocultar la barra de progreso global en el navbar
+            // Controlar visibilidad de la barra de progreso y clase en body para estilos móviles
             if (screenId === 'testScreen') {
                 globalProgressWrapperNavbar.style.display = 'block';
+                document.body.classList.add('test-mode-active');
             } else {
                 globalProgressWrapperNavbar.style.display = 'none';
+                document.body.classList.remove('test-mode-active');
             }
         }
         
@@ -1668,8 +1685,7 @@
                 return;
             }
 
-            globalProgressWrapperNavbar.style.display = 'block'; // Mostrar barra de progreso
-            updateProgressBar(); // Inicializarla
+            updateProgressBar(); 
             showScreen('countdownScreen');
             startCountdown();
         }
@@ -1682,7 +1698,7 @@
                 document.getElementById('countdown').textContent = count;
                 if (count === 0) {
                     clearInterval(countdownTimer);
-                    showScreen('testScreen');
+                    showScreen('testScreen'); // showScreen ya maneja la visibilidad de la barra de progreso
                     displayQuestion();
                 }
             }, 1000);
@@ -1828,7 +1844,6 @@
         }
 
         function updateProgressBar() {
-            // Actualizar la barra de progreso en el navbar
             if (loadedQuestions.length === 0) {
                 progressBarNavbar.style.width = '0%';
                 progressInfoTextNavbar.textContent = 'Progreso: 0%';
