@@ -14,8 +14,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Alinea el contenido al inicio */
-            padding-top: 70px; /* Espacio para el navbar fijo */
+            justify-content: flex-start;
+            padding-top: 120px; /* Aumentado para dar espacio al navbar + progress bar */
             animation: gradientShift 15s ease infinite;
         }
 
@@ -31,27 +31,31 @@
         .navbar {
             background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
             color: white;
-            padding: 15px 30px;
+            padding: 15px 30px; /* Padding original */
             text-align: center;
-            position: fixed; /* Fija el navbar */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000; /* Asegura que esté por encima de otros elementos */
+            z-index: 1000;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex; /* Para alinear elementos internos */
+            flex-direction: column; /* Apilar nombre y barra de progreso */
+            align-items: center; /* Centrar horizontalmente */
         }
 
         .academy-name {
-            font-size: 1.8em; /* Ajustado para navbar */
+            font-size: 1.8em;
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
+            margin-bottom: 10px; /* Espacio antes de la barra de progreso */
         }
 
         .robot-icon {
-            font-size: 1em; /* Ajustado para navbar */
+            font-size: 1em;
             animation: bounce 2s ease-in-out infinite;
         }
 
@@ -60,21 +64,55 @@
             40% { transform: translateY(-8px); }
             60% { transform: translateY(-4px); }
         }
+        
+        /* Estilos para la barra de progreso global DENTRO DEL NAVBAR */
+        .global-progress-wrapper-navbar {
+            width: 100%;
+            max-width: 900px; 
+            padding: 0 15px; /* Menor padding para que no se salga del navbar */
+            box-sizing: border-box;
+            margin-top: 5px; /* Pequeño margen superior */
+        }
+
+        .progress-info-text-navbar {
+            text-align: right;
+            font-size: 0.8em; /* Más pequeño para el navbar */
+            color: #e2e8f0; /* Un gris claro para el texto */
+            margin-bottom: 3px; /* Menor margen */
+        }
+
+        .progress-container-navbar { 
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.2); /* Fondo más sutil para la barra */
+            border-radius: 6px; /* Más pequeño */
+            height: 8px;  /* Más delgada */
+            overflow: hidden;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .progress-bar-navbar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #68d391, #48bb78); /* Un verde más brillante */
+            border-radius: 6px; 
+            transition: width 0.5s ease-in-out;
+        }
+
 
         .container {
             max-width: 900px;
-            width: 95%; /* Más flexible para pantallas pequeñas */
-            margin: 20px auto 0 auto; /* Margen superior ajustado */
+            width: 95%;
+            margin: 20px auto 20px auto; /* Margen superior para separarlo del navbar */
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
             overflow: hidden;
-            padding: 20px; /* Padding general para el contenedor */
+            padding: 20px;
         }
 
         .content-section {
-            display: none; /* Ocultar secciones por defecto */
+            display: none;
             padding: 20px;
             border-radius: 15px;
             background-color: rgba(255, 255, 255, 0.9);
@@ -85,25 +123,32 @@
             display: block;
         }
 
-        .instructions, .mode-selection, .topic-selection, .countdown-screen, .results-screen {
-            text-align: center;
-        }
-
-        .instructions h2, .mode-selection h2, .topic-selection h2, .results-screen h2 {
+        .screen-title { 
             font-size: 1.8em;
             color: #333;
             margin-bottom: 20px;
+            text-align: center;
         }
-         .instructions p, .mode-selection p, .topic-selection p {
+         .screen-description p { 
             font-size: 1.1em;
             color: #555;
             margin-bottom: 25px;
             line-height: 1.6;
+            text-align: center;
+        }
+        .screen-description ul {
+            list-style-position: inside;
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto 25px auto;
+        }
+         .screen-description li {
+            margin-bottom: 8px;
         }
 
+
         .btn {
-            /* Color de botón principal cambiado a púrpura */
-            background: linear-gradient(135deg, #4c509e, #01099b);
+            background: linear-gradient(135deg, #805ad5, #6b46c1);
             color: white;
             border: none;
             padding: 12px 25px;
@@ -118,7 +163,6 @@
 
         .btn:hover {
             transform: translateY(-3px) scale(1.03);
-            /* Sombra ajustada al nuevo color */
             box-shadow: 0 8px 15px rgba(107, 70, 193, 0.3);
         }
         .btn-secondary {
@@ -127,18 +171,30 @@
          .btn-secondary:hover {
             box-shadow: 0 8px 15px rgba(113, 128, 150, 0.3);
         }
-        .btn-training {
+        .btn-training { 
              background: linear-gradient(135deg, #48bb78, #38a169);
         }
          .btn-training:hover {
             box-shadow: 0 8px 15px rgba(72, 187, 120, 0.3);
+        }
+        .btn-study { 
+            background: linear-gradient(135deg, #f6ad55, #ed8936); 
+        }
+        .btn-study:hover {
+            box-shadow: 0 8px 15px rgba(237, 137, 54, 0.3);
+        }
+        .btn-exam { 
+             background: linear-gradient(135deg, #4299e1, #3182ce); 
+        }
+        .btn-exam:hover {
+            box-shadow: 0 8px 15px rgba(66, 153, 225, 0.3);
         }
 
 
         #countdown {
             font-size: 5em;
             font-weight: bold;
-            color: #6b46c1; /* Ajustado al nuevo color principal */
+            color: #6b46c1;
             margin: 30px 0;
             text-align: center;
         }
@@ -147,16 +203,18 @@
             padding: 25px;
             background: #f8fafc;
             border-radius: 12px;
-            border-left: 5px solid #6b46c1; /* Ajustado al nuevo color principal */
+            border-left: 5px solid #6b46c1;
             margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
 
         .question-header {
             display: flex;
+            flex-wrap: wrap; 
             justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
+            gap: 10px; 
         }
         .question-category {
             font-size: 0.9em;
@@ -168,8 +226,20 @@
         .question-number {
             font-size: 1em;
             font-weight: bold;
-            color: #6b46c1; /* Ajustado al nuevo color principal */
+            color: #6b46c1;
         }
+        .test-mode-info {
+            font-size: 0.85em;
+            color: #4a5568; 
+            background-color: #edf2f7; 
+            padding: 6px 12px;
+            border-radius: 15px;
+            text-align: center;
+            width: 100%; 
+            order: 3; 
+            margin-top: 5px;
+        }
+
 
         .question-text {
             font-weight: bold;
@@ -193,15 +263,21 @@
             background: white;
             font-size: 1em;
         }
+        .option.disabled { 
+            cursor: not-allowed;
+            opacity: 0.7;
+            pointer-events: none; 
+        }
 
-        .option:hover {
-            border-color: #805ad5; /* Ajustado al nuevo color principal */
+
+        .option:hover:not(.disabled) {
+            border-color: #805ad5;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(128, 90, 213, 0.2);
         }
 
-        .option.selected {
-            background: #b794f4; /* Un color púrpura más claro para la selección */
+        .option.selected:not(.disabled) {
+            background: #b794f4;
             color: white;
             border-color: #805ad5;
         }
@@ -212,23 +288,30 @@
             border-color: #38a169 !important;
         }
 
-        .option.incorrect {
+        .option.incorrect { 
             background: #f56565 !important;
             color: white !important;
             border-color: #e53e3e !important;
         }
-        .option.user-selected-incorrect { 
-            background: #f56565 !important;
-            color: white !important;
-            border-color: #c53030 !important;
-            opacity: 0.8;
-        }
-
-
-        .navigation-buttons {
+        
+        .navigation-buttons, .correction-buttons { 
             text-align: center;
             margin-top: 20px;
         }
+        #instantCorrectionFeedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+        }
+        #instantCorrectionFeedback.correct {
+            background-color: #c6f6d5; color: #22543d;
+        }
+        #instantCorrectionFeedback.incorrect {
+            background-color: #fed7d7; color: #742a2a;
+        }
+
 
         #score-percentage {
             font-size: 3.5em;
@@ -262,34 +345,13 @@
         .result-item p { margin-bottom: 5px; }
         .result-item strong { color: #2d3748; }
 
-
-        .progress-container {
-            width: 100%;
-            background-color: #e2e8f0;
-            border-radius: 8px;
-            height: 10px; 
-            margin-bottom: 25px;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, #48bb78, #38a169);
-            border-radius: 8px 0 0 8px; 
-            transition: width 0.5s ease-in-out;
-        }
-        .progress-bar.full {
-             border-radius: 8px; 
-        }
-
         .topic-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
-        .topic-button { /* Hereda de .btn, por lo que su color de fondo también cambiará */
+        .topic-button { 
             padding: 20px;
             font-size: 1.1em;
             border-radius: 10px;
@@ -299,7 +361,6 @@
         }
         .topic-button:hover {
             transform: translateY(-5px);
-            /* La sombra se hereda de .btn:hover y se ajustará automáticamente */
         }
 
         .footer {
@@ -359,6 +420,17 @@
             text-decoration: none;
             cursor: pointer;
         }
+        .button-group { 
+            display: flex;
+            flex-direction: column; 
+            gap: 15px; 
+            align-items: center; 
+            margin-top: 20px;
+        }
+        .button-group .btn {
+            width: 80%; 
+            max-width: 350px; 
+        }
 
     </style>
 </head>
@@ -368,45 +440,77 @@
         <div class="academy-name">
             🚀 Jose Academy <span class="robot-icon">🤖</span>
         </div>
+        <div id="globalProgressWrapperNavbar" class="global-progress-wrapper-navbar" style="display: none;">
+            <div id="progressInfoTextNavbar" class="progress-info-text-navbar">Progreso: 0%</div>
+            <div class="progress-container-navbar">
+                <div class="progress-bar-navbar" id="progressBarNavbar"></div>
+            </div>
+        </div>
     </nav>
 
     <div class="container">
-        <div id="instructionsScreen" class="content-section active">
-            <h2>📝 ¡Bienvenido al Test Interactivo!</h2>
-            <p>Prepárate para poner a prueba tus conocimientos. Lee atentamente cada pregunta y selecciona la opción que consideres correcta.</p>
-            <p>Puedes elegir entre dos modos:</p>
-            <ul>
-                <li><strong>🚀 Modo Normal:</strong> Un test variado con TODAS las preguntas disponibles de todas las categorías.</li>
-                <li><strong>🎯 Modo Entrenamiento:</strong> Elige un tema específico para practicar.</li>
-            </ul>
-            <button class="btn" onclick="showModeSelection()">¡Entendido, Comenzar!</button>
+        <div id="studyMethodSelectionScreen" class="content-section active">
+            <h2 class="screen-title">🎯 Elige tu Método de Aprendizaje</h2>
+            <div class="screen-description">
+                <p>Selecciona cómo quieres prepararte:</p>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-study" onclick="selectStudyMethod('study')">📚 Modo Estudio</button>
+                <button class="btn btn-exam" onclick="selectStudyMethod('exam')">📝 Modo Examen</button>
+            </div>
         </div>
 
-        <div id="modeSelectionScreen" class="content-section">
-            <h2>🕹️ Elige un Modo de Test</h2>
-            <button class="btn" onclick="startTest('normal')">🚀 Modo Normal</button>
-            <button class="btn btn-training" onclick="showTopicSelection()">🎯 Modo Entrenamiento</button>
-            <button class="btn btn-secondary" onclick="showScreen('instructionsScreen')">Volver a Instrucciones</button>
+        <div id="studyTestSelectionScreen" class="content-section">
+            <h2 class="screen-title">📚 Modo Estudio</h2>
+            <div class="screen-description">
+                <p>En este modo, podrás corregir cada pregunta al instante.</p>
+                <p>Elige el tipo de test:</p>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-study" onclick="startTest('all_questions', '', 'study')">🚀 Test Completo (Estudio)</button>
+                <button class="btn btn-study" onclick="showTopicSelectionScreen('study')">🎯 Entrenamiento por Tema (Estudio)</button>
+            </div>
+            <div class="text-center mt-6">
+                 <button class="btn btn-secondary" onclick="showScreen('studyMethodSelectionScreen')">Volver</button>
+            </div>
+        </div>
+
+        <div id="examTestSelectionScreen" class="content-section">
+            <h2 class="screen-title">📝 Modo Examen</h2>
+             <div class="screen-description">
+                <p>En este modo, la corrección se mostrará al finalizar todas las preguntas.</p>
+                <p>Elige el tipo de test:</p>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-exam" onclick="startTest('all_questions', '', 'exam')">🚀 Test Completo (Examen)</button>
+                <button class="btn btn-exam" onclick="showTopicSelectionScreen('exam')">🎯 Entrenamiento por Tema (Examen)</button>
+            </div>
+             <div class="text-center mt-6">
+                <button class="btn btn-secondary" onclick="showScreen('studyMethodSelectionScreen')">Volver</button>
+            </div>
         </div>
 
         <div id="topicSelectionScreen" class="content-section">
-            <h2>📚 Elige un Tema para Entrenar</h2>
+            <h2 class="screen-title">📚 Elige un Tema para Entrenar</h2>
             <div id="topicGrid" class="topic-grid">
                 </div>
-            <button class="btn btn-secondary" onclick="showScreen('modeSelectionScreen')">Volver a Modos</button>
+            <div class="text-center mt-6">
+                <button id="backFromTopicSelectionButton" class="btn btn-secondary">Volver</button>
+            </div>
         </div>
 
         <div id="countdownScreen" class="content-section">
-            <h2>⏳ Preparando el Test...</h2>
+            <h2 class="screen-title">⏳ Preparando el Test...</h2>
             <div id="countdown">3</div>
         </div>
 
         <div id="testScreen" class="content-section">
-            <div class="progress-container">
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
             <div id="questionContainer" class="question-container">
                 </div>
+            <div id="instantCorrectionFeedback" class="mt-3 p-3 rounded-md" style="display:none;">
+                </div>
+            <div class="correction-buttons" id="correctionButtonContainer">
+                 </div>
             <div class="navigation-buttons">
                 <button id="prevButton" class="btn btn-secondary" onclick="prevQuestion()">⬅️ Anterior</button>
                 <button id="nextButton" class="btn" onclick="nextQuestion()">Siguiente ➡️</button>
@@ -415,15 +519,17 @@
         </div>
 
         <div id="resultsScreen" class="content-section">
-            <h2>🏆 Resultados del Test</h2>
-            <div id="scorePercentage">0%</div>
-            <div id="scoreDetails">
+            <h2 class="screen-title">🏆 Resultados del Test</h2>
+            <div id="scorePercentage" class="text-center">0%</div>
+            <div id="scoreDetails" class="text-center">
                 Has respondido <strong id="correctAnswers">0</strong> de <strong id="totalAnswered">0</strong> preguntas correctamente.
             </div>
             <div id="resultsSummary" class="results-summary">
                 </div>
-            <button class="btn" onclick="restartApp()">🔄 Reiniciar Test</button>
-            <button class="btn btn-secondary" onclick="showScreen('modeSelectionScreen')">Elegir Otro Modo</button>
+            <div class="text-center mt-6">
+                <button class="btn btn-training" onclick="restartApp()">🔄 Reiniciar Test Completo</button>
+                <button class="btn btn-secondary" onclick="showScreen('studyMethodSelectionScreen')">Elegir Otro Método/Test</button>
+            </div>
         </div>
     </div>
 
@@ -436,7 +542,6 @@
         </div>
     </div>
 
-
     <footer class="footer">
         <p>🤖 <strong>Jose Academy</strong> - Aprende de forma interactiva</p>
         <p>© <span id="currentYear"></span> Jose Academy. Educación tecnológica del futuro.</p>
@@ -446,13 +551,13 @@
         // --- VARIABLES GLOBALES ---
         let currentQuestionIndex = 0;
         let userAnswers = []; 
-        let testMode = 'normal'; 
+        let currentStudyMethodType = 'exam'; 
+        let currentTestScope = 'all_questions'; 
         let selectedTopic = '';   
         let score = 0;
         let countdownTimer;
         let loadedQuestions = []; 
 
-        // --- DATOS DE PREGUNTAS ---
         const allQuestions = [
             // Derecho Penal (de Derecho Penal 2 Test.pdf y Derecho Penal TEST.pdf)
             {
@@ -879,10 +984,10 @@
             // Transporte de Mercancías (de MMPP Ivaspe TEST T1.pdf)
             {
                 category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Porque ley se rige la norma aplicable al transporte de mercancías:",
+                questionText: "Qué leyes regulan el transporte terrestre de mercancías:",
                 options: [ 
-                    { text: "LOTT", value: "a" }, 
-                    { text: "ROTT", value: "b" },
+                    { text: "LOTT/ROTT", value: "a" }, 
+                    { text: "ROTT/ADR", value: "b" },
                     { text: "Ley de Contratos de Transporte Terrestre", value: "c"},
                     { text: "Reglamento General de Vehículos", value: "d"}
                 ],
@@ -890,14 +995,14 @@
             },
             {
                 category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Porque reglamento se rige la norma aplicable al transporte de mercancías:",
+                questionText: "Que norma específica será de aplicación para el transporte de MMPP:",
                 options: [ 
                     { text: "LOTT", value: "a" }, 
-                    { text: "ROTT", value: "b" },
-                    { text: "Reglamento de Circulación", value: "c"},
-                    { text: "Reglamento de Transportes Terrestres", value: "d"} // Similar a ROTT pero más genérico
+                    { text: "ADR", value: "b" },
+                    { text: "RID", value: "c"},
+                    { text: "ROTT", value: "d"} 
                 ],
-                correctAnswer: "b"
+                correctAnswer: "a"
             },
             {
                 category: "Transporte de Mercancías", emoji: "🚚",
@@ -1026,8 +1131,8 @@
                 options: [
                     { text: "Interiores", value: "a" },
                     { text: "Internacionales", value: "b" },
-                    { text: "Nacionales", value: "c"}, // Similar a Interiores
-                    { text: "Domésticos", value: "d"} // Similar a Interiores
+                    { text: "Nacionales", value: "c"}, 
+                    { text: "Domésticos", value: "d"} 
                 ],
                 correctAnswer: "a"
             },
@@ -1037,8 +1142,8 @@
                 options: [
                     { text: "Interiores", value: "a" },
                     { text: "Internacionales", value: "b" },
-                    { text: "Transfronterizos", value: "c"}, // Similar a Internacionales
-                    { text: "Exteriores", value: "d"} // Similar a Internacionales
+                    { text: "Transfronterizos", value: "c"}, 
+                    { text: "Exteriores", value: "d"} 
                 ],
                 correctAnswer: "b"
             },
@@ -1227,7 +1332,7 @@
                     { text: "Anejo A", value: "a" },
                     { text: "Anejo B", value: "b" },
                     { text: "Anejo C", value: "c"},
-                    { text: "Parte 9", value: "d"} // Anejo B es Parte 8 y 9
+                    { text: "Parte 9", value: "d"} 
                 ],
                 correctAnswer: "b"
             },
@@ -1237,8 +1342,8 @@
                 options: [
                     { text: "1 parte", value: "a" },
                     { text: "5 partes", value: "b" },
-                    { text: "7 partes", value: "c" }, // Anejo A tiene 7 partes
-                    { text: "9 partes", value: "d" }  // Anejo A (7) + Anejo B (2) = 9
+                    { text: "7 partes", value: "c" }, 
+                    { text: "9 partes", value: "d" }  
                 ],
                 correctAnswer: "d"
             },
@@ -1347,23 +1452,34 @@
                 category: "Tácticas Policiales", emoji: "👮",
                 questionText: "El sistema nervioso central se integra de:",
                 options: [ 
-                    { text: "Encéfalo o médula espinal", value: "a" }, // Opción más precisa
-                    { text: "Sistema nervioso simpático", value: "b" }, // Estos son del SNA
+                    { text: "Encéfalo y médula espinal", value: "a" }, 
+                    { text: "Sistema nervioso simpático y parasimpático", value: "b" }, 
                     { text: "Sistema nervioso periférico y autónomo", value: "c" },
-                    { text: "Cerebro, cerebelo y bulbo raquídeo", value: "d" } // Partes del encéfalo
+                    { text: "Cerebro, cerebelo y bulbo raquídeo", value: "d" } 
+                ],
+                correctAnswer: "a" 
+            },
+             {
+                category: "Tácticas Policiales", emoji: "👮",
+                questionText: "El Sistema nervioso simpático se integra en:",
+                options: [ 
+                    { text: "Cortex cerebral", value: "a" },
+                    { text: "Respuesta automática", value: "b" }, 
+                    { text: "Respuesta razonada", value: "c" },
+                    { text: "Sistema nervioso periférico exclusivamente", value: "d" }
                 ],
                 correctAnswer: "b" 
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "El Sistema nervioso simpático es parte del:",
+                questionText: "El Sistema nervioso parasimpático se integra en:",
                 options: [ 
                     { text: "Cortex cerebral", value: "a" },
-                    { text: "Respuesta automática", value: "b" }, // Opción más precisa
+                    { text: "Respuesta automática", value: "b" }, 
                     { text: "Respuesta razonada", value: "c" },
                     { text: "Sistema nervioso periférico exclusivamente", value: "d" }
                 ],
-                correctAnswer: "b" 
+                correctAnswer: "c" 
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
@@ -1405,9 +1521,9 @@
                     { text: "Oportunidad, congruencia y proporcionalidad", value: "a" },
                     { text: "Visión del peligro, actuación y proporcionalidad", value: "b" },
                     { text: "Oportunidad, intencionalidad y proporcionalidad", value: "c" },
-                    { text: "Legalidad, necesidad y proporcionalidad", value: "d"} // También principios clave
+                    { text: "Legalidad, necesidad y proporcionalidad", value: "d"} 
                 ],
-                correctAnswer: "a" // Manteniendo la del PDF, aunque d es muy relevante
+                correctAnswer: "a" 
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
@@ -1445,42 +1561,75 @@
         ];
 
         // --- DOM ELEMENTOS ---
-        const instructionsScreen = document.getElementById('instructionsScreen');
-        const modeSelectionScreen = document.getElementById('modeSelectionScreen');
+        const studyMethodSelectionScreen = document.getElementById('studyMethodSelectionScreen');
+        const studyTestSelectionScreen = document.getElementById('studyTestSelectionScreen');
+        const examTestSelectionScreen = document.getElementById('examTestSelectionScreen');
         const topicSelectionScreen = document.getElementById('topicSelectionScreen');
         const countdownScreen = document.getElementById('countdownScreen');
         const testScreen = document.getElementById('testScreen');
         const resultsScreen = document.getElementById('resultsScreen');
         const questionContainer = document.getElementById('questionContainer');
-        const progressBar = document.getElementById('progressBar');
+        
+        // Elementos de la barra de progreso global
+        const globalProgressWrapperNavbar = document.getElementById('globalProgressWrapperNavbar');
+        const progressBarNavbar = document.getElementById('progressBarNavbar');
+        const progressInfoTextNavbar = document.getElementById('progressInfoTextNavbar');
+
+
         const prevButton = document.getElementById('prevButton');
         const nextButton = document.getElementById('nextButton');
         const finishButton = document.getElementById('finishButton');
         const topicGrid = document.getElementById('topicGrid');
+        const correctionButtonContainer = document.getElementById('correctionButtonContainer');
+        const instantCorrectionFeedback = document.getElementById('instantCorrectionFeedback');
+        const backFromTopicSelectionButton = document.getElementById('backFromTopicSelectionButton');
+
 
         // Modal elements
         const messageModal = document.getElementById('messageModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalMessage = document.getElementById('modalMessage');
 
-        // --- FUNCIONES DE NAVEGACIÓN Y LÓGICA DEL TEST ---
+        // --- LÓGICA DE LA APLICACIÓN ---
 
         function showScreen(screenId) {
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
             });
-            document.getElementById(screenId).classList.add('active');
+            const screenToShow = document.getElementById(screenId);
+            if (screenToShow) {
+                screenToShow.classList.add('active');
+            } else {
+                console.error("Error: Pantalla no encontrada -", screenId);
+            }
+
+            // Mostrar u ocultar la barra de progreso global en el navbar
+            if (screenId === 'testScreen') {
+                globalProgressWrapperNavbar.style.display = 'block';
+            } else {
+                globalProgressWrapperNavbar.style.display = 'none';
+            }
+        }
+        
+        function selectStudyMethod(method) {
+            currentStudyMethodType = method;
+            if (method === 'study') {
+                showScreen('studyTestSelectionScreen');
+            } else if (method === 'exam') {
+                showScreen('examTestSelectionScreen');
+            }
         }
 
-        function showModeSelection() {
-            showScreen('modeSelectionScreen');
-        }
-
-        function showTopicSelection() {
-            testMode = 'training';
+        function showTopicSelectionScreen(studyMethod) {
             populateTopicGrid();
             showScreen('topicSelectionScreen');
+            if (currentStudyMethodType === 'study') {
+                backFromTopicSelectionButton.onclick = () => showScreen('studyTestSelectionScreen');
+            } else { 
+                backFromTopicSelectionButton.onclick = () => showScreen('examTestSelectionScreen');
+            }
         }
+
 
         function populateTopicGrid() {
             const topics = [...new Set(allQuestions.map(q => q.category))];
@@ -1488,34 +1637,39 @@
             topics.forEach(topic => {
                 const topicEmoji = allQuestions.find(q => q.category === topic)?.emoji || '📚';
                 const button = document.createElement('button');
-                button.className = 'btn topic-button';
+                button.className = `btn topic-button ${currentStudyMethodType === 'study' ? 'btn-study' : 'btn-exam'}`;
                 button.innerHTML = `${topicEmoji} ${topic}`;
-                button.onclick = () => startTest('training', topic);
+                button.onclick = () => startTest('topic_specific', topic, currentStudyMethodType);
                 topicGrid.appendChild(button);
             });
         }
 
-        function startTest(mode, topic = '') {
-            testMode = mode;
+        function startTest(scope, topic = '', studyMethod) {
+            currentTestScope = scope;
             selectedTopic = topic;
+            currentStudyMethodType = studyMethod; 
             currentQuestionIndex = 0;
             userAnswers = [];
             score = 0;
 
-            if (mode === 'normal') {
+            if (scope === 'all_questions') {
                 loadedQuestions = shuffleArray([...allQuestions]); 
-                if (loadedQuestions.length === 0) {
-                    showMessage("Error", "No hay preguntas cargadas. Por favor, añade preguntas.");
-                    return;
-                }
-            } else if (mode === 'training') {
+            } else if (scope === 'topic_specific') {
                 loadedQuestions = allQuestions.filter(q => q.category === selectedTopic);
                 if (loadedQuestions.length === 0) {
                     showMessage("Error", `No hay preguntas cargadas para el tema: ${selectedTopic}.`);
                     return;
                 }
+                loadedQuestions = shuffleArray([...loadedQuestions]); 
+            }
+             if (loadedQuestions.length === 0) {
+                showMessage("Error", "No hay preguntas disponibles para este test.");
+                showScreen('studyMethodSelectionScreen');
+                return;
             }
 
+            globalProgressWrapperNavbar.style.display = 'block'; // Mostrar barra de progreso
+            updateProgressBar(); // Inicializarla
             showScreen('countdownScreen');
             startCountdown();
         }
@@ -1536,87 +1690,164 @@
 
         function displayQuestion() {
             if (currentQuestionIndex < 0 || currentQuestionIndex >= loadedQuestions.length) {
-                console.error("Índice de pregunta fuera de rango:", currentQuestionIndex, "Total cargadas:", loadedQuestions.length);
-                if(loadedQuestions.length === 0){
-                    showMessage("Error", "No hay preguntas para mostrar en este test.");
-                    showScreen('modeSelectionScreen'); 
-                    return;
-                }
-                finishTest();
+                finishTest(); 
                 return;
             }
             const question = loadedQuestions[currentQuestionIndex];
-            if (!question) {
-                console.error("Pregunta no encontrada en el índice:", currentQuestionIndex);
-                finishTest();
-                return;
+            const questionGlobalIndex = allQuestions.indexOf(question); 
+
+            let testModeInfoText = `Modo: ${currentStudyMethodType === 'study' ? 'Estudio' : 'Examen'}`;
+            if (currentTestScope === 'topic_specific') {
+                testModeInfoText += ` - Tema: ${selectedTopic}`;
+            } else {
+                testModeInfoText += ` - Test Completo`;
             }
 
             let optionsHTML = '';
             const shuffledOptions = shuffleArray([...question.options]);
 
             shuffledOptions.forEach(option => {
-                const userAnswerEntry = userAnswers.find(ua => ua.questionGlobalIndex === allQuestions.indexOf(question));
+                const userAnswerEntry = userAnswers.find(ua => ua.questionGlobalIndex === questionGlobalIndex);
                 const isSelected = userAnswerEntry && userAnswerEntry.answer === option.value;
-                optionsHTML += `<div class="option ${isSelected ? 'selected' : ''}" data-value="${option.value}" onclick="selectAnswer(this, '${option.value}')">${option.text}</div>`;
+                const isDisabled = userAnswerEntry && userAnswerEntry.correctedInStudy ? 'disabled' : '';
+                
+                optionsHTML += `<div class="option ${isSelected ? 'selected' : ''} ${isDisabled}" data-value="${option.value}" onclick="selectAnswer(this, '${option.value}')">${option.text}</div>`;
             });
 
             questionContainer.innerHTML = `
                 <div class="question-header">
                     <span class="question-category">${question.emoji} ${question.category}</span>
                     <span class="question-number">Pregunta ${currentQuestionIndex + 1} de ${loadedQuestions.length}</span>
+                    <div class="test-mode-info">${testModeInfoText}</div>
                 </div>
                 <div class="question-text">${question.questionText}</div>
                 <div class="options">${optionsHTML}</div>
             `;
+
+            correctionButtonContainer.innerHTML = ''; 
+            instantCorrectionFeedback.style.display = 'none'; 
+            instantCorrectionFeedback.className = 'mt-3 p-3 rounded-md text-center'; 
+
+            const userAnswerEntry = userAnswers.find(ua => ua.questionGlobalIndex === questionGlobalIndex);
+            if (currentStudyMethodType === 'study') {
+                if (userAnswerEntry && userAnswerEntry.correctedInStudy) {
+                    showInstantFeedback(questionGlobalIndex, userAnswerEntry.answer);
+                    disableOptionsForCurrentQuestion(true);
+                } else {
+                    const correctBtn = document.createElement('button');
+                    correctBtn.className = 'btn btn-secondary'; 
+                    correctBtn.textContent = '💡 Corregir esta pregunta';
+                    correctBtn.onclick = checkCurrentQuestion;
+                    correctionButtonContainer.appendChild(correctBtn);
+                    disableOptionsForCurrentQuestion(false); 
+                }
+            } else {
+                 disableOptionsForCurrentQuestion(false); 
+            }
+
             updateNavigationButtons();
             updateProgressBar();
         }
+        
+        function disableOptionsForCurrentQuestion(disable) {
+            const optionsElements = questionContainer.querySelectorAll('.option');
+            optionsElements.forEach(opt => {
+                if (disable) {
+                    opt.classList.add('disabled');
+                } else {
+                    opt.classList.remove('disabled');
+                }
+            });
+        }
+
+        function showInstantFeedback(questionGlobalIndex, userAnswerValue) {
+            const question = allQuestions[questionGlobalIndex];
+            if (!question) return;
+
+            const isCorrect = userAnswerValue === question.correctAnswer;
+            instantCorrectionFeedback.textContent = isCorrect ? '¡Correcto! ✅' : 'Incorrecto. ❌';
+            instantCorrectionFeedback.classList.add(isCorrect ? 'correct' : 'incorrect');
+            instantCorrectionFeedback.style.display = 'block';
+
+            const optionsElements = questionContainer.querySelectorAll('.option');
+            optionsElements.forEach(opt => {
+                opt.classList.remove('selected'); 
+                if (opt.dataset.value === question.correctAnswer) {
+                    opt.classList.add('correct');
+                }
+                if (opt.dataset.value === userAnswerValue && !isCorrect) {
+                    opt.classList.add('incorrect');
+                }
+            });
+        }
+
+
+        function checkCurrentQuestion() {
+            const question = loadedQuestions[currentQuestionIndex];
+            const questionGlobalIndex = allQuestions.indexOf(question);
+            const userAnswerEntry = userAnswers.find(ua => ua.questionGlobalIndex === questionGlobalIndex);
+
+            if (!userAnswerEntry) {
+                showMessage("Atención", "Por favor, selecciona una respuesta antes de corregir.");
+                return;
+            }
+
+            userAnswerEntry.correctedInStudy = true;
+            
+            showInstantFeedback(questionGlobalIndex, userAnswerEntry.answer);
+            disableOptionsForCurrentQuestion(true); 
+            correctionButtonContainer.innerHTML = ''; 
+        }
+
 
         function selectAnswer(optionElement, answerValue) {
-            const questionGlobalIndex = allQuestions.indexOf(loadedQuestions[currentQuestionIndex]);
+            const question = loadedQuestions[currentQuestionIndex];
+            const questionGlobalIndex = allQuestions.indexOf(question);
+            
+            const existingAnswer = userAnswers.find(ua => ua.questionGlobalIndex === questionGlobalIndex);
+            if (existingAnswer && existingAnswer.correctedInStudy) {
+                return; 
+            }
+
             const questionOptions = optionElement.parentElement.querySelectorAll('.option');
             questionOptions.forEach(opt => opt.classList.remove('selected'));
             optionElement.classList.add('selected');
 
-            const existingAnswerIndex = userAnswers.findIndex(ua => ua.questionGlobalIndex === questionGlobalIndex);
-            if (existingAnswerIndex > -1) {
-                userAnswers[existingAnswerIndex].answer = answerValue;
+            if (existingAnswer) {
+                existingAnswer.answer = answerValue;
             } else {
-                userAnswers.push({ questionGlobalIndex: questionGlobalIndex, answer: answerValue });
+                userAnswers.push({ questionGlobalIndex: questionGlobalIndex, answer: answerValue, correctedInStudy: false });
             }
         }
 
         function updateNavigationButtons() {
             prevButton.style.display = currentQuestionIndex === 0 ? 'none' : 'inline-block';
-            nextButton.style.display = currentQuestionIndex === loadedQuestions.length - 1 ? 'none' : 'inline-block';
-            finishButton.style.display = currentQuestionIndex === loadedQuestions.length - 1 ? 'inline-block' : 'none';
+            const isLastQuestion = currentQuestionIndex === loadedQuestions.length - 1;
+            nextButton.style.display = isLastQuestion ? 'none' : 'inline-block';
+            finishButton.style.display = isLastQuestion ? 'inline-block' : 'none';
         }
 
         function updateProgressBar() {
+            // Actualizar la barra de progreso en el navbar
             if (loadedQuestions.length === 0) {
-                progressBar.style.width = '0%';
-                progressBar.classList.remove('full');
+                progressBarNavbar.style.width = '0%';
+                progressInfoTextNavbar.textContent = 'Progreso: 0%';
                 return;
             }
-            const percentage = ((currentQuestionIndex + 1) / loadedQuestions.length) * 100;
-            progressBar.style.width = percentage + '%';
-            if (percentage >= 100) { 
-                progressBar.classList.add('full');
-            } else {
-                progressBar.classList.remove('full');
-            }
+            const percentage = Math.round(((currentQuestionIndex +1) / loadedQuestions.length) * 100);
+            progressBarNavbar.style.width = percentage + '%';
+            progressInfoTextNavbar.textContent = `Progreso: ${percentage}% (${currentQuestionIndex + 1}/${loadedQuestions.length})`;
         }
 
         function nextQuestion() {
-            const currentQuestionGlobalIndex = allQuestions.indexOf(loadedQuestions[currentQuestionIndex]);
-            const hasAnswered = userAnswers.some(ua => ua.questionGlobalIndex === currentQuestionGlobalIndex);
+            const question = loadedQuestions[currentQuestionIndex];
+            const questionGlobalIndex = allQuestions.indexOf(question);
+            const userAnswerEntry = userAnswers.find(ua => ua.questionGlobalIndex === questionGlobalIndex);
 
-            if (!hasAnswered) {
+            if (!userAnswerEntry) {
                 showMessage("Atención", "Por favor, selecciona una respuesta antes de continuar.");
                 return;
             }
-
             if (currentQuestionIndex < loadedQuestions.length - 1) {
                 currentQuestionIndex++;
                 displayQuestion();
@@ -1631,10 +1862,16 @@
         }
 
         function finishTest() {
-            const unansweredQuestionsCount = loadedQuestions.length - userAnswers.length;
+            let unansweredInCurrentTest = 0;
+            for(let i = 0; i < loadedQuestions.length; i++) {
+                const qGlobalIndex = allQuestions.indexOf(loadedQuestions[i]);
+                if (!userAnswers.some(ua => ua.questionGlobalIndex === qGlobalIndex)) {
+                    unansweredInCurrentTest++;
+                }
+            }
 
-            if (unansweredQuestionsCount > 0) {
-                 showMessage("Confirmación", `Hay ${unansweredQuestionsCount} pregunta(s) sin responder. ¿Deseas finalizar de todas formas?`, true, () => calculateAndShowResults());
+            if (unansweredInCurrentTest > 0) {
+                 showMessage("Confirmación", `Hay ${unansweredInCurrentTest} pregunta(s) sin responder. ¿Deseas finalizar de todas formas?`, true, () => calculateAndShowResults());
                  return;
             }
             calculateAndShowResults();
@@ -1642,9 +1879,10 @@
 
         function calculateAndShowResults() {
             score = 0;
-            userAnswers.forEach(userAnswer => {
-                const question = allQuestions[userAnswer.questionGlobalIndex];
-                if (question && question.correctAnswer === userAnswer.answer) {
+            loadedQuestions.forEach(question => {
+                const questionGlobalIndex = allQuestions.indexOf(question);
+                const userAnswerEntry = userAnswers.find(ua => ua.questionGlobalIndex === questionGlobalIndex);
+                if (userAnswerEntry && userAnswerEntry.answer === question.correctAnswer) {
                     score++;
                 }
             });
@@ -1665,15 +1903,15 @@
             loadedQuestions.forEach((question, index) => {
                 const questionGlobalIndex = allQuestions.indexOf(question);
                 const userAnswerEntry = userAnswers.find(ua => ua.questionGlobalIndex === questionGlobalIndex);
-                const userAnswerValue = userAnswerEntry ? userAnswerEntry.answer : null;
-                const isCorrect = userAnswerValue === question.correctAnswer;
+                const userAnswerValue = userAnswerEntry ? userAnswerEntry.answer : "No respondida"; 
+                const isCorrect = userAnswerEntry ? userAnswerEntry.answer === question.correctAnswer : false;
 
                 const resultItem = document.createElement('div');
                 resultItem.classList.add('result-item', isCorrect ? 'correct' : 'incorrect');
 
                 let userAnswerText = "No respondida";
-                if (userAnswerValue) {
-                    const userAnswerOption = question.options.find(opt => opt.value === userAnswerValue);
+                if (userAnswerEntry && userAnswerEntry.answer) { 
+                    const userAnswerOption = question.options.find(opt => opt.value === userAnswerEntry.answer);
                     userAnswerText = userAnswerOption ? userAnswerOption.text : "Respuesta inválida";
                 }
                 
@@ -1682,7 +1920,7 @@
 
                 resultItem.innerHTML = `
                     <p><strong>Pregunta ${index + 1}:</strong> ${question.questionText}</p>
-                    <p><em>Tu respuesta: ${userAnswerText} ${isCorrect ? '✅' : '❌'}</em></p>
+                    <p><em>Tu respuesta: ${userAnswerText} ${isCorrect ? '✅' : (userAnswerEntry && userAnswerEntry.answer ? '❌' : '')}</em></p>
                     ${!isCorrect ? `<p><em>Respuesta correcta: ${correctAnswerText}</em></p>` : ''}
                 `;
                 summaryContainer.appendChild(resultItem);
@@ -1694,9 +1932,9 @@
             userAnswers = [];
             score = 0;
             loadedQuestions = [];
-            progressBar.style.width = '0%';
-            progressBar.classList.remove('full');
-            showScreen('instructionsScreen');
+            if(progressBarNavbar) progressBarNavbar.style.width = '0%';
+            if(progressInfoTextNavbar) progressInfoTextNavbar.textContent = 'Progreso: 0%';
+            showScreen('studyMethodSelectionScreen'); 
         }
 
         function shuffleArray(array) {
@@ -1754,7 +1992,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            showScreen('instructionsScreen');
+            showScreen('studyMethodSelectionScreen'); 
             document.getElementById('currentYear').textContent = new Date().getFullYear();
         });
     </script>
