@@ -584,7 +584,7 @@
         let loadedQuestions = []; 
 
         const allQuestions = [
-            // Derecho Penal (de Derecho Penal 2 Test.pdf y Derecho Penal TEST.pdf)
+            // Derecho Penal 
             {
                 category: "Derecho Penal", emoji: "⚖️",
                 questionText: "El artículo 250 de la Lecrim, establece los derechos del detenido, entre ellos:",
@@ -1123,10 +1123,21 @@
                 options: [
                     { text: "El número ONU.", value: "a" },
                     { text: "La designación oficial de transporte.", value: "b" },
-                    { text: "El número de licencia del conductor.", value: "c" },
+                    { text: "El número de licencia del conductor.", value: "c" }, // Según PDF
                     { text: "Clase, grupo de embalaje, número y descripción de bultos, cantidad total, nombre y dirección del expedidor y del destinatario.", value: "d" }
                 ],
-                correctAnswer: "c" // Según el PDF, aunque D es más completo para MMPP. Para "toda materia" C es menos probable.
+                correctAnswer: "c" 
+            },
+            {
+                category: "Transporte de Mercancías", emoji: "🚚",
+                questionText: "¿En qué caso no será necesario emitir un certificado de arrumazón separado para el contenedor?",
+                options: [
+                    { text: "Cuando el conductor confirma verbalmente la correcta sujeción de la carga.", value: "a" },
+                    { text: "Cuando se inserta en la carta de porte una declaración que indique que la carga se efectuó conforme a los reglamentos aplicables y se identifique a la persona responsable del certificado de arrumazón.", value: "b" }, // PDF marca C
+                    { text: "Cuando el destinatario final acepta la carga sin inspección previa.", value: "c" },
+                    { text: "Cuando el certificado de arrumazón se emite por la empresa de transporte de forma independiente.", value: "d" }
+                ],
+                correctAnswer: "b" // Corregido según la lógica más común, el PDF marcaba C que no parece correcto.
             },
             {
                 category: "Transporte de Mercancías", emoji: "🚚",
@@ -1139,71 +1150,104 @@
                 ],
                 correctAnswer: "b"
             },
+            {
+                category: "Transporte de Mercancías", emoji: "🚚",
+                questionText: "Antes de comenzar un viaje con mercancías peligrosas, ¿qué deben hacer los miembros de la tripulación respecto a las instrucciones escritas?",
+                options: [
+                    { text: "Informarse sobre las mercancías peligrosas cargadas y consultar las instrucciones escritas sobre las acciones a tomar en caso de accidente o emergencia y que sean seguras y practicables.", value: "a" },
+                    { text: "Ignorar las instrucciones escritas y seguir solo su experiencia.", value: "b" },
+                    { text: "Entregar las instrucciones escritas al destinatario sin revisarlas.", value: "c" },
+                    { text: "Esperar a que el destinatario les explique las instrucciones escritas.", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Transporte de Mercancías", emoji: "🚚",
+                questionText: "¿En qué consiste la característica actual de las Instrucciones escritas para el transporte de mercancías peligrosas?",
+                options: [
+                    { text: "Que existe un formato estándar que se utiliza independientemente del tipo de mercancías transportadas.", value: "a" },
+                    { text: "Que cada transportista debe crear su propio formato personalizado para las instrucciones.", value: "b" },
+                    { text: "Que solo se usan instrucciones escritas para mercancías líquidas.", value: "c" },
+                    { text: "Que las instrucciones escritas son opcionales si la carga es pequeña.", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Transporte de Mercancías", emoji: "🚚",
+                questionText: "¿Qué obligación tiene el transportista respecto al idioma de las instrucciones escritas que debe llevar el conductor?",
+                options: [
+                    { text: "Asegurarse de que el conductor lleva las instrucciones escritas en un idioma que entiende.", value: "a" },
+                    { text: "No es necesario que el conductor entienda las instrucciones si el transportista las tiene.", value: "b" },
+                    { text: "Solo se exige que las instrucciones estén en el idioma del país de destino.", value: "c" },
+                    { text: "Las instrucciones escritas pueden estar en cualquier idioma sin importar el conductor.", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
 
-            // Tácticas Policiales (NUEVAS PREGUNTAS)
+            // Tácticas Policiales (NUEVAS PREGUNTAS de Tactica Policial Ok.pdf)
             {
                 category: "Tácticas Policiales", emoji: "👮",
                 questionText: "¿La posición que deberá colocarse una persona para ponerle los grilletes será...?",
                 options: [
-                    { text: "De cúbito prono (boca abajo), manos con manos.", value: "a" },
-                    { text: "De pie, manos adelante.", value: "b" },
-                    { text: "Sentado, manos en la nuca.", value: "c" },
-                    { text: "De rodillas, manos a la espalda.", value: "d" }
+                    { text: "De cúbito prono (manos a la espalda y dorso con dorso)", value: "a" },
+                    { text: "De cúbito prono (manos a la espalda y palma con palma)", value: "b" },
+                    { text: "De cúbito prono (manos delante y dorso con dorso)", value: "c" },
+                    { text: "De cúbito prono (manos delante y palma con palma)", value: "d" }
                 ],
                 correctAnswer: "a"
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "¿El efecto interlímbico...?",
+                questionText: "¿Qué es el efecto interlímbico?",
                 options: [
-                    { text: "Es un movimiento voluntario de defensa.", value: "a" },
-                    { text: "Coordinación y sincronización entre diferentes miembros del cuerpo durante un movimiento. Es involuntario.", value: "b" },
-                    { text: "Afecta solo a las extremidades superiores.", value: "c" },
-                    { text: "Se puede entrenar para evitarlo.", value: "d" }
-                ],
-                correctAnswer: "b"
-            },
-            {
-                category: "Tácticas Policiales", emoji: "👮",
-                questionText: "¿Los espasmos musculares o contracciones musculares involuntarias...?",
-                options: [
-                    { text: "Son siempre signo de una lesión grave.", value: "a" },
-                    { text: "Reflejo interlímbico.", value: "b" },
-                    { text: "Ocurren solo durante el sueño.", value: "c" },
-                    { text: "Son controlables con la voluntad.", value: "d" }
-                ],
-                correctAnswer: "b"
-            },
-            {
-                category: "Tácticas Policiales", emoji: "👮",
-                questionText: "La exclusión auditiva en situación de estrés...",
-                options: [
-                    { text: "Mejora la concentración en la amenaza.", value: "a" },
-                    { text: "Activa el sistema nervioso simpático. Es un efecto del estrés.", value: "b" },
-                    { text: "Es un signo de cobardía.", value: "c" },
-                    { text: "Solo afecta a personal no entrenado.", value: "d" }
-                ],
-                correctAnswer: "b"
-            },
-            {
-                category: "Tácticas Policiales", emoji: "👮",
-                questionText: "¿Qué entendemos por el llamado efecto túnel?",
-                options: [
-                    { text: "Pérdida total de la visión.", value: "a" },
-                    { text: "Visión mejorada de los detalles lejanos.", value: "b" },
-                    { text: "Reducción del campo visual en situaciones de alta tensión o estrés.", value: "c" },
-                    { text: "Una técnica de conducción evasiva.", value: "d" }
+                    { text: "La falta de coordinación muscular causada por una lesión en el sistema nervioso central.", value: "a" },
+                    { text: "El aumento de fuerza en un músculo debido al entrenamiento unilateral del lado opuesto.", value: "b" },
+                    { text: "Coordinación y sincronización entre diferentes miembros del cuerpo durante un movimiento. Es involuntario.", value: "c" },
+                    { text: "Una técnica de entrenamiento utilizada para mejorar la flexibilidad en miembros superiores e inferiores.", value: "d" }
                 ],
                 correctAnswer: "c"
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
+                questionText: "¿A qué se deben los espasmos musculares o contracciones musculares involuntarias?",
+                options: [
+                    { text: "A una mala hidratación y fatiga muscular localizada.", value: "a" },
+                    { text: "A un fallo en la unión neuromuscular que impide la relajación del músculo.", value: "b" },
+                    { text: "A replicar los movimientos con ambas manos (Reflejo interlímbico).", value: "c" }, // Opción C del PDF, con aclaración.
+                    { text: "A un exceso de calcio en la sangre que estimula continuamente las fibras musculares.", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Tácticas Policiales", emoji: "👮",
+                questionText: "¿Qué es la exclusión auditiva en una situación de estrés?",
+                options: [
+                    { text: "Una condición médica crónica que impide procesar sonidos agudos.", value: "a" },
+                    { text: "La pérdida de audición causada por la exposición prolongada al ruido.", value: "b" },
+                    { text: "Un mecanismo de defensa que bloquea sonidos irrelevantes durante la concentración intensa.", value: "c" },
+                    { text: "Activa el sistema nervioso simpático. Es un efecto del estrés.", value: "d" }
+                ],
+                correctAnswer: "d"
+            },
+            {
+                category: "Tácticas Policiales", emoji: "👮",
                 questionText: "Si una persona tiene una requisitoria y orden de detención, ¿cuál será la forma más segura de actuar (orden del procedimiento)?",
                 options: [
-                    { text: "1º Cacheo / 2º Enmanillamiento", value: "a" },
-                    { text: "1º Enmanillamiento / 2º Cacheo", value: "b" },
-                    { text: "1º Identificación verbal / 2º Cacheo", value: "c" },
-                    { text: "1º Traslado a dependencias / 2º Enmanillamiento", value: "d" }
+                    { text: "1º Informar de sus derechos / 2º Cacheo", value: "a" },
+                    { text: "1º Lectura de la orden judicial / 2º Enmanillamiento", value: "b" },
+                    { text: "1º Cacheo / 2º Engrilletamiento", value: "c" },
+                    { text: "1º Engrilletamiento / 2º Cacheo", value: "d" }
+                ],
+                correctAnswer: "d"
+            },
+            {
+                category: "Tácticas Policiales", emoji: "👮",
+                questionText: "¿Qué entendemos por el llamado efecto túnel?",
+                options: [
+                    { text: "Aumento de la agudeza visual durante una actividad física intensa.", value: "a" },
+                    { text: "Reducción del campo visual en situaciones de peligro vital, alta tensión o estrés.", value: "b" },
+                    { text: "Visión doble causada por un desajuste neurológico momentáneo.", value: "c" },
+                    { text: "Adaptación del ojo humano a la oscuridad en espacios cerrados.", value: "d" }
                 ],
                 correctAnswer: "b"
             },
@@ -1211,113 +1255,114 @@
                 category: "Tácticas Policiales", emoji: "👮",
                 questionText: "Si nos encontramos en una intervención que conlleva el uso de la fuerza y entramos en lo que denominamos efecto túnel...",
                 options: [
-                    { text: "Debemos aumentar la agresividad para compensar.", value: "a" },
-                    { text: "Es importante intentar ampliar el campo visual y controlar la respiración.", value: "b" },
-                    { text: "Significa que estamos actuando correctamente.", value: "c" },
-                    { text: "Hay que solicitar apoyo inmediatamente sin hacer nada más.", value: "d" }
+                    { text: "Debemos aumentar la agresividad para compensar la pérdida de percepción.", value: "a" },
+                    { text: "Es crucial intentar ampliar el campo visual, controlar la respiración y mantener la conciencia situacional.", value: "b" },
+                    { text: "Significa que la adrenalina está optimizando nuestra respuesta y no hay que preocuparse.", value: "c" },
+                    { text: "Hay que cerrar los ojos momentáneamente para recalibrar la visión.", value: "d" }
                 ],
                 correctAnswer: "b" 
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "Una de las técnicas de control en una actuación con brazo es...",
+                questionText: "¿Cuál es uno de los efectos del estrés durante una actuación en binomio?",
                 options: [
-                    { text: "Golpe directo al codo.", value: "a" },
-                    { text: "Sujección/Control articular.", value: "b" },
-                    { text: "Torsión de muñeca únicamente.", value: "c" },
-                    { text: "Presión en puntos nerviosos del cuello.", value: "d" }
+                    { text: "Mejora de la comunicación no verbal entre los integrantes.", value: "a" },
+                    { text: "Aumento de la coordinación táctica entre compañeros.", value: "b" },
+                    { text: "Disminución de la respuesta instintiva y motora.", value: "c" },
+                    { text: "Es la individualización perceptual.", value: "d" }
                 ],
-                correctAnswer: "b"
+                correctAnswer: "d"
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "¿Qué entendemos por la Regla de Tueller?",
+                questionText: "¿Qué entendemos por la regla de Tueller?",
                 options: [
-                    { text: "Un protocolo para el uso de armas de fuego.", value: "a" },
-                    { text: "La distancia mínima de seguridad para responder a un ataque con arma blanca es de 21 pies (unos 6,5 metros).", value: "b" },
-                    { text: "El tiempo máximo para reducir a un sospechoso.", value: "c" },
-                    { text: "Una técnica de negociación en crisis.", value: "d" }
-                ],
-                correctAnswer: "b"
-            },
-            {
-                category: "Tácticas Policiales", emoji: "👮",
-                questionText: "¿Cuándo transportamos a un detenido en el coche con la puerta en llamas?",
-                options: [
-                    { text: "Nunca, se debe evacuar primero.", value: "a" },
-                    { text: "De espaldas al riesgo para protegerlo.", value: "b" },
-                    { text: "De frente al riesgo.", value: "c" },
-                    { text: "Es indiferente la orientación.", value: "d" }
-                ],
-                correctAnswer: "c" 
-            },
-            {
-                category: "Tácticas Policiales", emoji: "👮",
-                questionText: "Llevar conocimiento en cartel de sancionado y llevar un termómetro es...",
-                options: [
-                    { text: "Parte del equipo antidisturbios.", value: "a" },
-                    { text: "Obligatorio solo en servicios de tráfico.", value: "b" },
-                    { text: "En el servicio (relacionado con preparación y prevención).", value: "c" },
-                    { text: "Una medida obsoleta.", value: "d" }
+                    { text: "El tiempo mínimo de reacción ante un ataque sorpresa.", value: "a" },
+                    { text: "La distancia necesaria para neutralizar a un agresor desarmado.", value: "b" },
+                    { text: "La distancia mínima de seguridad para responder a un ataque con arma blanca es de unos 7 metros.", value: "c" },
+                    { text: "El protocolo de intervención ante amenazas con armas de fuego.", value: "d" }
                 ],
                 correctAnswer: "c"
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "Si vas acompañado el agente que desempeña el rol de contacto se encargará de...",
+                questionText: "¿En cuál de las siguientes situaciones es MENOS indicado el uso prioritario de la 'parada en llamada'?",
                 options: [
-                    { text: "Cubrir los flancos.", value: "a" },
-                    { text: "Dialogar o negociar.", value: "b" },
-                    { text: "Realizar el cacheo.", value: "c" },
-                    { text: "Conducir el vehículo policial.", value: "d" }
+                    { text: "Vehículo con ocupantes con conducta extraña.", value: "a" },
+                    { text: "Vehículo con cristales tintados que impiden visibilidad.", value: "b" },
+                    { text: "Furgonetas o camiones que levantan sospechas.", value: "c" },
+                    { text: "Actuación rutinaria trabajando en binomio con buena visibilidad.", value: "d" }
+                ],
+                correctAnswer: "d" 
+            },
+            {
+                category: "Tácticas Policiales", emoji: "👮",
+                questionText: "Respecto al control de sangrados y el porte de un torniquete por un agente:",
+                options: [
+                    { text: "Depende del criterio y preferencia personal del agente.", value: "a" },
+                    { text: "Solo es necesario en unidades especializadas como U.I.P o G.O.E.S.", value: "b" },
+                    { text: "Es una recomendación médica, pero la formación es opcional.", value: "c" },
+                    { text: "Se considera esencial tener la formación obligatoria y adecuada para su uso.", value: "d" }
+                ],
+                correctAnswer: "d"
+            },
+            {
+                category: "Tácticas Policiales", emoji: "👮",
+                questionText: "En una intervención, el agente que desempeña el rol de contacto se encargará de:",
+                options: [
+                    { text: "Controlar la escena y asegurar el perímetro.", value: "a" },
+                    { text: "Dialogar, dar órdenes o negociar.", value: "b" },
+                    { text: "Realizar el arresto y el uso de la fuerza física.", value: "c" },
+                    { text: "Coordinar con otras unidades y servicios de emergencia.", value: "d" }
                 ],
                 correctAnswer: "b"
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "Si vas acompañado el agente que desempeña el rol de protección se encargará de...",
+                questionText: "En una intervención, el agente que desempeña el rol de protección se encargará de:",
                 options: [
-                    { text: "Tomar notas de la intervención.", value: "a" },
-                    { text: "De la seguridad del entorno y del compañero de actuación.", value: "b" },
-                    { text: "Identificar a los testigos.", value: "c" },
-                    { text: "Solicitar refuerzos si es necesario.", value: "d" }
+                    { text: "Negociar con el individuo para evitar el conflicto.", value: "a" },
+                    { text: "Estar atento al individuo, controlando los movimientos para proteger al compañero, especialmente el movimiento de las manos.", value: "b" },
+                    { text: "Documentar la intervención y recopilar pruebas.", value: "c" },
+                    { text: "Coordinar el traslado del detenido al centro policial.", value: "d" }
                 ],
                 correctAnswer: "b"
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "El primer uso de las F.R.C.S. (Fuerzas y Cuerpos de Seguridad) será...",
+                questionText: "¿Cuál es el primer uso de la fuerza de las Fuerzas y Cuerpos de Seguridad (FFCCSS)?",
                 options: [
-                    { text: "El uso de la fuerza física.", value: "a" },
-                    { text: "La detención inmediata.", value: "b" },
-                    { text: "Presencia policial y Comunicación táctica.", value: "c" },
-                    { text: "El disparo de advertencia.", value: "d" }
+                    { text: "Uso de armas no letales.", value: "a" },
+                    { text: "Intervención física directa.", value: "b" },
+                    { text: "Presencia policial y comunicación táctica.", value: "c" },
+                    { text: "Uso de armas de fuego.", value: "d" }
                 ],
                 correctAnswer: "c"
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "En la intervención con vehículos, ¿qué conocemos como riesgos bajos...?",
+                questionText: "En la intervención de vehículos, ¿qué conocemos como riesgo desconocido?",
                 options: [
-                    { text: "Aquellos donde el conductor colabora activamente.", value: "a" },
-                    { text: "Son aquellos no evidentes, los peligros que no son fácilmente identificables.", value: "b" },
-                    { text: "Intervenciones diurnas en zonas tranquilas.", value: "c" },
-                    { text: "Situaciones sin armas visibles.", value: "d" }
+                    { text: "Aquel que no se conoce o no se puede evaluar completamente antes del contacto.", value: "a" },
+                    { text: "Riesgo controlado mediante protocolos estándar.", value: "b" },
+                    { text: "Riesgo identificado previamente por la policía.", value: "c" },
+                    { text: "Riesgo asociado a fallos mecánicos del vehículo.", value: "d" }
                 ],
-                correctAnswer: "b"
+                correctAnswer: "a"
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "En la intervención con vehículos, ¿qué conocemos como riesgo bajo nulo...?",
+                questionText: "En la intervención con vehículos, ¿qué conocemos como riesgo bajo?",
                 options: [
-                    { text: "Un vehículo estacionado sin ocupantes.", value: "a" },
-                    { text: "Una comprobación rutinaria de documentación.", value: "b" },
-                    { text: "No existe (es decir, no se puede considerar que no hay riesgo en una intervención).", value: "c" },
-                    { text: "Cuando el conductor es conocido y no peligroso.", value: "d" }
+                    { text: "Riesgo que puede manejarse con medidas mínimas de precaución.", value: "a" },
+                    { text: "No existe el riesgo bajo; toda intervención tiene un riesgo inherente.", value: "b" },
+                    { text: "Riesgo que solo afecta al vehículo y no a las personas.", value: "c" },
+                    { text: "Riesgo asociado a situaciones rutinarias sin amenaza aparente.", value: "d" }
                 ],
-                correctAnswer: "c"
+                correctAnswer: "b"
             },
-            // Nuevas Preguntas de Seguridad Vial
+            
+            // Seguridad Vial
             {
                 category: "Seguridad Vial", emoji: "🚦",
                 questionText: "¿Cuál de los siguientes fue uno de los primeros hitos de la historia del tráfico?",
