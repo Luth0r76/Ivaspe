@@ -372,10 +372,10 @@
             width: 100%;
             margin-top: auto; 
             box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
-            transition: padding 0.3s ease, font-size 0.3s ease; /* Transición para suavizar cambio de tamaño */
+            transition: padding 0.3s ease, font-size 0.3s ease; 
         }
         .footer p {
-            transition: font-size 0.3s ease; /* Transición para el texto del footer */
+            transition: font-size 0.3s ease; 
         }
 
         .modal {
@@ -450,10 +450,10 @@
                 font-size: 0.8em; 
             }
             body.test-mode-active .footer {
-                padding: 10px; /* Footer más compacto en móvil durante el test */
+                padding: 10px; 
             }
             body.test-mode-active .footer p {
-                font-size: 0.8em; /* Texto del footer más pequeño */
+                font-size: 0.8em; 
             }
         }
 
@@ -1006,50 +1006,17 @@
                 correctAnswer: "b"
             },
 
-            // Transporte de Mercancías (de MMPP Ivaspe TEST T1.pdf)
+            // Transporte de Mercancías (NUEVAS PREGUNTAS de MMPP TEST OK.pdf)
             {
                 category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Qué leyes regulan el transporte terrestre de mercancías:",
-                options: [ 
-                    { text: "LOTT/ROTT", value: "a" }, 
-                    { text: "ROTT/ADR", value: "b" },
-                    { text: "Ley de Contratos de Transporte Terrestre", value: "c"},
-                    { text: "Reglamento General de Vehículos", value: "d"}
+                questionText: "Que leyes regulan el transporte de mercancías por carretera:",
+                options: [
+                    { text: "LOTT/ROTT", value: "a" },
+                    { text: "LOTT/ADR", value: "b" },
+                    { text: "ADR", value: "c" },
+                    { text: "Todas las anteriores", value: "d" }
                 ],
                 correctAnswer: "a"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Que norma específica será de aplicación para el transporte de MMPP:",
-                options: [ 
-                    { text: "LOTT", value: "a" }, 
-                    { text: "ADR", value: "b" },
-                    { text: "RID", value: "c"},
-                    { text: "ROTT", value: "d"} 
-                ],
-                correctAnswer: "a"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "El transporte de viajeros y mercancías, serán aquellos realizados por:",
-                options: [
-                    { text: "Vehículos automóviles que circulen con camino de rodadura fija, y con medios fijos de captación de energía", value: "a" },
-                    { text: "Vehículos automóviles que circulen sin camino de rodadura fija, y sin medios fijos de captación de energía", value: "b" },
-                    { text: "Ferrocarriles y tranvías exclusivamente", value: "c"},
-                    { text: "Cualquier medio que desplace personas o bienes", value: "d"}
-                ],
-                correctAnswer: "b"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "El transporte de mercancías, ¿de qué tipo de carácter puede ser?",
-                options: [
-                    { text: "Público únicamente", value: "a" },
-                    { text: "Privado únicamente", value: "b" }, 
-                    { text: "Público o Privado", value: "c" },
-                    { text: "Internacional o Nacional exclusivamente", value: "d"}
-                ],
-                correctAnswer: "c" 
             },
             {
                 category: "Transporte de Mercancías", emoji: "🚚",
@@ -1057,8 +1024,8 @@
                 options: [
                     { text: "Públicos", value: "a" },
                     { text: "Privados", value: "b" },
-                    { text: "Ambos (Públicos y Privados)", value: "c" },
-                    { text: "Solo transporte de mercancías peligrosas", value: "d"}
+                    { text: "Ambos", value: "c" },
+                    { text: "Solo nacionales", value: "d" }
                 ],
                 correctAnswer: "c"
             },
@@ -1068,8 +1035,8 @@
                 options: [
                     { text: "Aquellos que se llevan a cabo por cuenta ajena a cambio de una retribución económica.", value: "a" },
                     { text: "Aquellos que se llevan a cabo por cuenta propia, para satisfacer necesidades particulares o como complemento.", value: "b" },
-                    { text: "Los realizados por entidades estatales sin ánimo de lucro.", value: "c"},
-                    { text: "Los que utilizan vías públicas exclusivamente.", value: "d"}
+                    { text: "Los realizados por entidades sin ánimo de lucro.", value: "c" },
+                    { text: "Los que no superan las 3.5 toneladas de MMA.", value: "d" }
                 ],
                 correctAnswer: "a"
             },
@@ -1079,109 +1046,32 @@
                 options: [
                     { text: "Aquellos que se llevan a cabo por cuenta ajena a cambio de una retribución económica.", value: "a" },
                     { text: "Aquellos que se llevan a cabo por cuenta propia, para satisfacer necesidades particulares o como complemento de otras actividades.", value: "b" },
-                    { text: "Los que no requieren autorización administrativa.", value: "c"},
-                    { text: "Los que se realizan en vehículos de menos de 3.5T MMA.", value: "d"}
+                    { text: "Los que siempre requieren autorización especial.", value: "c" },
+                    { text: "Solo los realizados con vehículos ligeros.", value: "d" }
                 ],
                 correctAnswer: "b"
             },
             {
                 category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Según el art. 100 LOTT, los transportes privados particulares son:",
+                questionText: "En el artículo 100, la LOTT distingue entre privados particulares y privados complementarios. ¿Cuál pertenece a los PRIVADOS PARTICULARES?",
                 options: [
-                    { text: "Dedicados a satisfacer necesidades de desplazamiento personal/doméstico del titular y allegados, en vehículo turismo o ligeros.", value: "a" },
-                    { text: "El que se lleva a cabo por empresas cuya finalidad principal no es de transporte, como complemento.", value: "b" },
-                    { text: "Transporte de mercancías propias en furgonetas.", value: "c"},
-                    { text: "Transporte remunerado de amigos o familiares.", value: "d"}
+                    { text: "Estar dedicados a satisfacer las necesidades de desplazamiento de carácter personal o doméstico del titular del vehículo y de sus allegados y deben realizarse en vehículo turismo o ligeros.", value: "a" },
+                    { text: "El que se lleva a cabo en el marco de la actuación general por empresas o establecimientos cuyas finalidades principales no son de transporte.", value: "b" },
+                    { text: "Transporte de mercancías para la venta directa.", value: "c" },
+                    { text: "Transporte realizado por cooperativas de transporte.", value: "d" }
                 ],
                 correctAnswer: "a"
             },
             {
                 category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Según el art. 100 LOTT, los transportes privados complementarios son:",
+                questionText: "En el artículo 100, la LOTT distingue entre privados particulares y privados complementarios. ¿Cuál pertenece a los PRIVADOS COMPLEMENTARIOS?",
                 options: [
-                    { text: "Dedicados a satisfacer necesidades de desplazamiento personal/doméstico.", value: "a" },
-                    { text: "El que se lleva a cabo por empresas cuya finalidad principal no es de transporte, como complemento a su actividad principal.", value: "b" },
-                    { text: "El transporte escolar realizado por el propio centro.", value: "c"},
-                    { text: "El transporte de trabajadores de una empresa constructora a la obra.", value: "d"}
+                    { text: "Estar dedicados a satisfacer las necesidades de desplazamiento de carácter personal o doméstico del titular del vehículo y de sus allegados y deben realizarse en vehículo turismo o ligeros.", value: "a" },
+                    { text: "El que se lleva a cabo en el marco de la actuación general por empresas o establecimientos cuyas finalidades principales no son de transporte.", value: "b" },
+                    { text: "Transporte de viajeros en autobús de línea regular.", value: "c" },
+                    { text: "Transporte de amigos sin contraprestación económica.", value: "d" }
                 ],
                 correctAnswer: "b"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Los transportes públicos, dependiendo del itinerario y de la frecuencia, pueden ser:",
-                options: [
-                    { text: "Regulares o discrecionales.", value: "a" },
-                    { text: "Irregulares o discrecionales", value: "b" },
-                    { text: "Regulares o Irregulares", value: "c" },
-                    { text: "Continuos o discontinuos", value: "d"}
-                ],
-                correctAnswer: "a"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Los transportes que se efectúan dentro de itinerarios preestablecidos, y con sujeción a calendarios y horarios prefijados, son:",
-                options: [
-                    { text: "Regulares", value: "a" },
-                    { text: "Discrecionales", value: "b" },
-                    { text: "Especiales", value: "c"},
-                    { text: "Programados", value: "d"}
-                ],
-                correctAnswer: "a"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Los transportes que se llevan a cabo sin sujeción a itinerario, calendario ni horario preestablecido, son:",
-                options: [
-                    { text: "Regulares", value: "a" },
-                    { text: "Discrecionales", value: "b" },
-                    { text: "Eventuales", value: "c"},
-                    { text: "No programados", value: "d"}
-                ],
-                correctAnswer: "b"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Los transportes públicos de mercancías por carretera tendrán en todo caso, aun cuando se produzca reiteración de itinerario, calendario y horario, la consideración de:",
-                options: [
-                    { text: "Regulares", value: "a" },
-                    { text: "Discrecionales", value: "b" },
-                    { text: "Mixtos", value: "c"},
-                    { text: "Según contrato", value: "d"}
-                ],
-                correctAnswer: "b"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Los transportes que tienen su origen, trayecto y destino dentro del territorio del Estado español son:",
-                options: [
-                    { text: "Interiores", value: "a" },
-                    { text: "Internacionales", value: "b" },
-                    { text: "Nacionales", value: "c"}, 
-                    { text: "Domésticos", value: "d"} 
-                ],
-                correctAnswer: "a"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Los transportes cuyo itinerario discurre parcialmente por el territorio de estados extranjeros son:",
-                options: [
-                    { text: "Interiores", value: "a" },
-                    { text: "Internacionales", value: "b" },
-                    { text: "Transfronterizos", value: "c"}, 
-                    { text: "Exteriores", value: "d"} 
-                ],
-                correctAnswer: "b"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "¿Qué tipos de autorizaciones de transporte de mercancías (Tarjetas de Transporte) existen?",
-                options: [
-                    { text: "Mercancías Discrecional Ligero (MDL)", value: "a" },
-                    { text: "Mercancías Discrecional Pesado (MDP)", value: "b" },
-                    { text: "Mercancías Privado Complementario (MPC)", value: "c" },
-                    { text: "Todas las anteriores", value: "d" }
-                ],
-                correctAnswer: "d"
             },
             {
                 category: "Transporte de Mercancías", emoji: "🚚",
@@ -1190,255 +1080,419 @@
                     { text: "Permiso de transporte", value: "a" },
                     { text: "Tarjeta de transporte", value: "b" },
                     { text: "Tarjeta de embarque", value: "c" },
-                    { text: "Licencia de circulación de mercancías", value: "d"}
+                    { text: "Certificado de aptitud del vehículo", value: "d" }
                 ],
                 correctAnswer: "b"
             },
             {
                 category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Se exige la tarjeta de transporte a vehículos de transporte público de mercancías de terceros con MMA por encima de:",
+                questionText: "Respecto a las excepciones a la obligatoriedad de la Tarjeta de transporte indica la respuesta INCORRECTA:",
                 options: [
-                    { text: "3 toneladas", value: "a" },
-                    { text: "2.5 toneladas", value: "b" },
-                    { text: "2 toneladas", value: "c" },
-                    { text: "3.5 toneladas", value: "d"}
+                    { text: "Transportes públicos o privados realizados en vehículos de menos de tres ruedas.", value: "a" },
+                    { text: "Transportes privados complementarios de mercancías que se realicen en vehículos de hasta 3.5 toneladas de masa máxima autorizada.", value: "b" },
+                    { text: "Transportes Oficiales.", value: "c" },
+                    { text: "Vehículos automóviles que circulen con camino de rodadura fija, y con medios fijos de captación de energía.", value: "d" }
+                ],
+                correctAnswer: "d" 
+            },
+            {
+                category: "Transporte de Mercancías", emoji: "🚚",
+                questionText: "¿Cuáles son las exigencias jurídicas que deben satisfacerse al utilizar el tratamiento electrónico de la información (TEI) o el intercambio de datos electrónicos (EDI) como sustituto de documentos en papel durante el transporte?",
+                options: [
+                    { text: "Fuerza probatoria y disponibilidad de los datos.", value: "a" },
+                    { text: "Velocidad de transmisión y compatibilidad con dispositivos móviles.", value: "b" },
+                    { text: "Reducción de costes administrativos y uso exclusivo de formatos estándar.", value: "c" },
+                    { text: "Validación por parte del destinatario final y respaldo en la nube.", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Transporte de Mercancías", emoji: "🚚",
+                questionText: "¿Qué debe tenerse en cuenta respecto al modelo de la carta de porte en el transporte de mercancías?",
+                options: [
+                    { text: "Es obligatorio utilizar el modelo oficial establecido por el Ministerio de Transportes.", value: "a" },
+                    { text: "La carta de porte debe ser manuscrita y seguir un diseño preaprobado.", value: "b" },
+                    { text: "No existe un modelo oficial de carta de porte.", value: "c" },
+                    { text: "Solo se puede usar un formato digital homologado por la Unión Europea.", value: "d" }
                 ],
                 correctAnswer: "c"
             },
             {
                 category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Si las mercancías trasladadas son propias, la tarjeta de transporte será obligatoria para una MMA superior a:",
+                questionText: "¿Cuáles de las siguientes informaciones deben figurar en la carta de porte para toda materia u objeto presentado para su transporte?",
                 options: [
-                    { text: "2 toneladas", value: "a" },
-                    { text: "3 toneladas", value: "b" },
-                    { text: "2.5 toneladas", value: "c" },
-                    { text: "3.5 toneladas", value: "d" }
+                    { text: "El número ONU.", value: "a" },
+                    { text: "La designación oficial de transporte.", value: "b" },
+                    { text: "El número de licencia del conductor.", value: "c" },
+                    { text: "Clase, grupo de embalaje, número y descripción de bultos, cantidad total, nombre y dirección del expedidor y del destinatario.", value: "d" }
                 ],
-                correctAnswer: "d"
+                correctAnswer: "c" // Según el PDF, aunque D es más completo para MMPP. Para "toda materia" C es menos probable.
             },
             {
                 category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Las Tarjetas MDL son para empresas con vehículos ligeros cuya capacidad de carga sumada no exceda de:",
+                questionText: "¿Cuál es la definición más adecuada de arrumazón en el contexto del transporte de mercancías?",
                 options: [
-                    { text: "50 Tm", value: "a" },
-                    { text: "60 Tm", value: "b" },
-                    { text: "70 Tm", value: "c" },
-                    { text: "40 Tm", value: "d"}
+                    { text: "La acción de cargar mercancías en el contenedor sin importar su estado.", value: "a" },
+                    { text: "Emitida por el expedidor, esta certifica que los bultos fueron arrumados en un contenedor limpio y seco, compatibles entre sí, en buen estado aparente y adecuadamente arrumados y trincados.", value: "b" },
+                    { text: "El proceso de documentar la carga para su transporte internacional.", value: "c" },
+                    { text: "El embalaje exterior utilizado para proteger la mercancía durante el transporte.", value: "d" }
                 ],
                 correctAnswer: "b"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Las Tarjetas MDP son para empresas con al menos un vehículo pesado, o con ligeros si la suma de carga excede de:",
-                options: [
-                    { text: "50 Tm", value: "a" },
-                    { text: "60 Tm", value: "b" },
-                    { text: "70 Tm", value: "c" },
-                    { text: "80 Tm", value: "d"}
-                ],
-                correctAnswer: "b" 
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Son vehículos ligeros aquellos cuya MMA sea igual o inferior a 6.000 Kg, o aun siendo superior, su carga útil sea igual o inferior a:",
-                options: [
-                    { text: "3.000 Kg", value: "a" },
-                    { text: "3.500 Kg", value: "b" },
-                    { text: "4.000 Kg", value: "c" },
-                    { text: "2.500 Kg", value: "d"}
-                ],
-                correctAnswer: "b"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Son vehículos pesados aquellos cuya MMA sea superior a 6.000 Kg y que su capacidad de carga útil sea superior a:",
-                options: [
-                    { text: "3.000 Kg", value: "a" },
-                    { text: "3.500 Kg", value: "b" },
-                    { text: "4.000 Kg", value: "c" },
-                    { text: "2.500 Kg", value: "d"}
-                ],
-                correctAnswer: "b"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Los Visados de las tarjetas de transporte deben ser, según RD 1830/1999:",
-                options: [
-                    { text: "Anuales", value: "a" },
-                    { text: "Bianuales", value: "b" },
-                    { text: "Mensuales", value: "c" },
-                    { text: "Trimestrales", value: "d" }
-                ],
-                correctAnswer: "b"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Excepto las autorizaciones de transporte (VT), que se visan cada:",
-                options: [
-                    { text: "Año", value: "a" },
-                    { text: "Dos años", value: "b" }, 
-                    { text: "Tres años", value: "c" },
-                    { text: "Cuatro años", value: "d"}
-                ],
-                correctAnswer: "b"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "¿La no renovación del Visado en fecha conlleva la pérdida de su vigencia?",
-                options: [
-                    { text: "Si", value: "a" },
-                    { text: "No", value: "b" },
-                    { text: "Solo si es transporte público", value: "c"},
-                    { text: "Solo si es transporte internacional", value: "d"}
-                ],
-                correctAnswer: "a"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Una vez perdida la vigencia del visado, ¿en qué plazo se podría solicitar su rehabilitación?",
-                options: [
-                    { text: "En el año siguiente", value: "a" },
-                    { text: "A los dos años siguientes", value: "b" },
-                    { text: "Al mes del año siguiente", value: "c" },
-                    { text: "En los seis meses siguientes", value: "d"}
-                ],
-                correctAnswer: "a"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Para la realización de la actividad de transporte por conductores de terceros países se necesita:",
-                options: [
-                    { text: "Tarjeta de transporte del vehículo", value: "a" },
-                    { text: "Certificado de Conductor", value: "b" },
-                    { text: "Visado Schengen", value: "c" },
-                    { text: "Permiso de trabajo específico para transporte", value: "d"}
-                ],
-                correctAnswer: "b"
-            },
-            {
-                category: "Transporte de Mercancías", emoji: "🚚",
-                questionText: "Si un conductor de tercer país con Certificado cambia de empresa, ¿la nueva empresa debe solicitar un nuevo Certificado?",
-                options: [
-                    { text: "Si", value: "a" },
-                    { text: "No, el certificado es del conductor", value: "b" },
-                    { text: "Solo si cambia de tipo de vehículo", value: "c"},
-                    { text: "Solo si han pasado más de 6 meses", value: "d"}
-                ],
-                correctAnswer: "a"
             },
 
-            
-
-            // Tácticas Policiales (de Tácticas Policiales. TEST.pdf)
+            // Tácticas Policiales (NUEVAS PREGUNTAS)
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "El sistema nervioso central se integra de:",
-                options: [ 
-                    { text: "Sistema nervioso general", value: "a" }, 
-                    { text: "Sistema nervioso simpático y parasimpático", value: "b" }, 
-                    { text: "Sistema nervioso paralelo", value: "c" },
-                    { text: "Cerebro, cerebelo o bulbo raquídeo", value: "d" } 
+                questionText: "¿La posición que deberá colocarse una persona para ponerle los grilletes será...?",
+                options: [
+                    { text: "De cúbito prono (boca abajo), manos con manos.", value: "a" },
+                    { text: "De pie, manos adelante.", value: "b" },
+                    { text: "Sentado, manos en la nuca.", value: "c" },
+                    { text: "De rodillas, manos a la espalda.", value: "d" }
                 ],
-                correctAnswer: "b" 
-            },
-             {
-                category: "Tácticas Policiales", emoji: "👮",
-                questionText: "El Sistema nervioso simpático se integra en:",
-                options: [ 
-                    { text: "Cortex cerebral", value: "a" },
-                    { text: "Respuesta automática", value: "b" }, 
-                    { text: "Respuesta razonada", value: "c" },
-                    { text: "Sistema nervioso periférico exclusivamente", value: "d" }
-                ],
-                correctAnswer: "b" 
+                correctAnswer: "a"
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "El Sistema nervioso parasimpático se integra en:",
-                options: [ 
-                    { text: "Cortex cerebral", value: "a" },
-                    { text: "Respuesta automática", value: "b" }, 
-                    { text: "Respuesta razonada", value: "c" },
-                    { text: "Sistema nervioso periférico exclusivamente", value: "d" }
+                questionText: "¿El efecto interlímbico...?",
+                options: [
+                    { text: "Es un movimiento voluntario de defensa.", value: "a" },
+                    { text: "Coordinación y sincronización entre diferentes miembros del cuerpo durante un movimiento. Es involuntario.", value: "b" },
+                    { text: "Afecta solo a las extremidades superiores.", value: "c" },
+                    { text: "Se puede entrenar para evitarlo.", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Tácticas Policiales", emoji: "👮",
+                questionText: "¿Los espasmos musculares o contracciones musculares involuntarias...?",
+                options: [
+                    { text: "Son siempre signo de una lesión grave.", value: "a" },
+                    { text: "Reflejo interlímbico.", value: "b" },
+                    { text: "Ocurren solo durante el sueño.", value: "c" },
+                    { text: "Son controlables con la voluntad.", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Tácticas Policiales", emoji: "👮",
+                questionText: "La exclusión auditiva en situación de estrés...",
+                options: [
+                    { text: "Mejora la concentración en la amenaza.", value: "a" },
+                    { text: "Activa el sistema nervioso simpático. Es un efecto del estrés.", value: "b" },
+                    { text: "Es un signo de cobardía.", value: "c" },
+                    { text: "Solo afecta a personal no entrenado.", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Tácticas Policiales", emoji: "👮",
+                questionText: "¿Qué entendemos por el llamado efecto túnel?",
+                options: [
+                    { text: "Pérdida total de la visión.", value: "a" },
+                    { text: "Visión mejorada de los detalles lejanos.", value: "b" },
+                    { text: "Reducción del campo visual en situaciones de alta tensión o estrés.", value: "c" },
+                    { text: "Una técnica de conducción evasiva.", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Tácticas Policiales", emoji: "👮",
+                questionText: "Si una persona tiene una requisitoria y orden de detención, ¿cuál será la forma más segura de actuar (orden del procedimiento)?",
+                options: [
+                    { text: "1º Cacheo / 2º Enmanillamiento", value: "a" },
+                    { text: "1º Enmanillamiento / 2º Cacheo", value: "b" },
+                    { text: "1º Identificación verbal / 2º Cacheo", value: "c" },
+                    { text: "1º Traslado a dependencias / 2º Enmanillamiento", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Tácticas Policiales", emoji: "👮",
+                questionText: "Si nos encontramos en una intervención que conlleva el uso de la fuerza y entramos en lo que denominamos efecto túnel...",
+                options: [
+                    { text: "Debemos aumentar la agresividad para compensar.", value: "a" },
+                    { text: "Es importante intentar ampliar el campo visual y controlar la respiración.", value: "b" },
+                    { text: "Significa que estamos actuando correctamente.", value: "c" },
+                    { text: "Hay que solicitar apoyo inmediatamente sin hacer nada más.", value: "d" }
+                ],
+                correctAnswer: "b" 
+            },
+            {
+                category: "Tácticas Policiales", emoji: "👮",
+                questionText: "Una de las técnicas de control en una actuación con brazo es...",
+                options: [
+                    { text: "Golpe directo al codo.", value: "a" },
+                    { text: "Sujección/Control articular.", value: "b" },
+                    { text: "Torsión de muñeca únicamente.", value: "c" },
+                    { text: "Presión en puntos nerviosos del cuello.", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Tácticas Policiales", emoji: "👮",
+                questionText: "¿Qué entendemos por la Regla de Tueller?",
+                options: [
+                    { text: "Un protocolo para el uso de armas de fuego.", value: "a" },
+                    { text: "La distancia mínima de seguridad para responder a un ataque con arma blanca es de 21 pies (unos 6,5 metros).", value: "b" },
+                    { text: "El tiempo máximo para reducir a un sospechoso.", value: "c" },
+                    { text: "Una técnica de negociación en crisis.", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Tácticas Policiales", emoji: "👮",
+                questionText: "¿Cuándo transportamos a un detenido en el coche con la puerta en llamas?",
+                options: [
+                    { text: "Nunca, se debe evacuar primero.", value: "a" },
+                    { text: "De espaldas al riesgo para protegerlo.", value: "b" },
+                    { text: "De frente al riesgo.", value: "c" },
+                    { text: "Es indiferente la orientación.", value: "d" }
                 ],
                 correctAnswer: "c" 
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "Las 3 F's (respuestas al estrés agudo) se componen de:",
+                questionText: "Llevar conocimiento en cartel de sancionado y llevar un termómetro es...",
                 options: [
-                    { text: "Huida (Flight), Lucha/Ataque defensivo (Fight) y Congelación (Freeze)", value: "a" },
-                    { text: "Fly, fight y feel", value: "b" },
-                    { text: "Huida, lucha/ataque ofensivo y congelación", value: "c" },
-                    { text: "Focus, Fight, Flee", value: "d"}
+                    { text: "Parte del equipo antidisturbios.", value: "a" },
+                    { text: "Obligatorio solo en servicios de tráfico.", value: "b" },
+                    { text: "En el servicio (relacionado con preparación y prevención).", value: "c" },
+                    { text: "Una medida obsoleta.", value: "d" }
                 ],
-                correctAnswer: "a"
+                correctAnswer: "c"
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "En los 5 pilares de la supervivencia, el elemento más importante es:",
+                questionText: "Si vas acompañado el agente que desempeña el rol de contacto se encargará de...",
                 options: [
-                    { text: "Preparación física", value: "a" },
-                    { text: "La actitud o preparación mental", value: "b" },
-                    { text: "La suerte", value: "c" },
-                    { text: "El equipamiento táctico", value: "d"}
+                    { text: "Cubrir los flancos.", value: "a" },
+                    { text: "Dialogar o negociar.", value: "b" },
+                    { text: "Realizar el cacheo.", value: "c" },
+                    { text: "Conducir el vehículo policial.", value: "d" }
                 ],
                 correctAnswer: "b"
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "Por orden, los objetivos de integridad en una intervención policial son:",
+                questionText: "Si vas acompañado el agente que desempeña el rol de protección se encargará de...",
                 options: [
-                    { text: "Jurídica, física y laboral", value: "a" },
-                    { text: "Jurídica, laboral y física", value: "b" },
-                    { text: "Física, jurídica y laboral", value: "c" },
-                    { text: "Física, psicológica y material", value: "d"}
+                    { text: "Tomar notas de la intervención.", value: "a" },
+                    { text: "De la seguridad del entorno y del compañero de actuación.", value: "b" },
+                    { text: "Identificar a los testigos.", value: "c" },
+                    { text: "Solicitar refuerzos si es necesario.", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Tácticas Policiales", emoji: "👮",
+                questionText: "El primer uso de las F.R.C.S. (Fuerzas y Cuerpos de Seguridad) será...",
+                options: [
+                    { text: "El uso de la fuerza física.", value: "a" },
+                    { text: "La detención inmediata.", value: "b" },
+                    { text: "Presencia policial y Comunicación táctica.", value: "c" },
+                    { text: "El disparo de advertencia.", value: "d" }
                 ],
                 correctAnswer: "c"
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "Los 3 principios básicos de actuación en el uso de la fuerza son:",
+                questionText: "En la intervención con vehículos, ¿qué conocemos como riesgos bajos...?",
                 options: [
-                    { text: "Oportunidad, congruencia y proporcionalidad", value: "a" },
-                    { text: "Visión del peligro, actuación y proporcionalidad", value: "b" },
-                    { text: "Oportunidad, intencionalidad y proporcionalidad", value: "c" },
-                    { text: "Legalidad, necesidad y proporcionalidad", value: "d"} 
+                    { text: "Aquellos donde el conductor colabora activamente.", value: "a" },
+                    { text: "Son aquellos no evidentes, los peligros que no son fácilmente identificables.", value: "b" },
+                    { text: "Intervenciones diurnas en zonas tranquilas.", value: "c" },
+                    { text: "Situaciones sin armas visibles.", value: "d" }
                 ],
-                correctAnswer: "a" 
+                correctAnswer: "b"
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "El orden de procedimiento en una intervención es:",
+                questionText: "En la intervención con vehículos, ¿qué conocemos como riesgo bajo nulo...?",
                 options: [
-                    { text: "Tácticas, número de intervinientes y técnicas", value: "a" },
-                    { text: "Número de intervinientes, técnicas y tácticas", value: "b" },
-                    { text: "Número de intervinientes, tácticas y técnicas", value: "c" },
-                    { text: "Identificación, valoración y actuación", value: "d"}
+                    { text: "Un vehículo estacionado sin ocupantes.", value: "a" },
+                    { text: "Una comprobación rutinaria de documentación.", value: "b" },
+                    { text: "No existe (es decir, no se puede considerar que no hay riesgo en una intervención).", value: "c" },
+                    { text: "Cuando el conductor es conocido y no peligroso.", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            // Nuevas Preguntas de Seguridad Vial
+            {
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "¿Cuál de los siguientes fue uno de los primeros hitos de la historia del tráfico?",
+                options: [
+                    { text: "La invención de la rueda", value: "a" },
+                    { text: "La construcción de las primeras carreteras", value: "b" },
+                    { text: "La domesticación del caballo", value: "c" },
+                    { text: "El primer semáforo", value: "d" }
                 ],
                 correctAnswer: "c"
             },
             {
-                category: "Tácticas Policiales", emoji: "👮",
-                questionText: "A la hora de engrilletar se debe hacer:",
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "¿Cuál fue la calzada que a través de sus 1500 km de longitud unía Cádiz con los Pirineos y atravesaba la Comunidad Valenciana en más de 400 km?",
                 options: [
-                    { text: "Esposar/engrilletar de cubito prono (manos a la espalda y dorso con dorso)", value: "a" },
-                    { text: "Esposar/engrilletar de cubito prono (manos a la espalda y palma con palma)", value: "b" },
-                    { text: "Esposar/engrilletar de cubito prono (manos delante y dorso con dorso)", value: "c" },
-                    { text: "De pie, manos a la espalda y palmas hacia afuera", value: "d"}
+                    { text: "Vía de la Plata", value: "a" },
+                    { text: "Vía Augusta", value: "b" },
+                    { text: "Camino de Santiago", value: "c" },
+                    { text: "Vía Apia", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "¿Los problemas del tráfico son una novedad actual?",
+                options: [
+                    { text: "Sí, surgieron con el automóvil", value: "a" },
+                    { text: "No, tienen su origen en la historia", value: "b" },
+                    { text: "Sí, principalmente en las grandes ciudades", value: "c" },
+                    { text: "No, pero se han agravado recientemente", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "¿Cuál de los siguientes automóviles fue el primero en crearse a nivel mundial?",
+                options: [
+                    { text: "El Ford Modelo T", value: "a" },
+                    { text: "El vehículo a vapor de Cugnot", value: "b" },
+                    { text: "El vehículo a motor de combustión (Benz Patent-Motorwagen)", value: "c" },
+                    { text: "El primer coche eléctrico", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "El Código de Circulación aprobado en el año 1934 estuvo vigente durante muchas décadas. ¿Hasta cuándo se mantuvo en vigor siendo derogado en su totalidad?",
+                options: [
+                    { text: "Hasta la Ley de Seguridad Vial de 1990", value: "a" },
+                    { text: "Hasta el Reglamento General de Circulación de 2003", value: "b" },
+                    { text: "Hasta la entrada en vigor del Permiso por Puntos en 2006", value: "c" },
+                    { text: "Con la entrada en vigor del Reglamento General de Conductores de 2009", value: "d" }
+                ],
+                correctAnswer: "d"
+            },
+            {
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "¿Qué obligación tienen los usuarios de las vías cuando presencian o tienen conocimiento de un accidente de tráfico?",
+                options: [
+                    { text: "Detenerse siempre y esperar a los servicios de emergencia", value: "a" },
+                    { text: "No intervenir para no entorpecer", value: "b" },
+                    { text: "Auxiliar o solicitar auxilio para las víctimas, colaborar para evitar mayores daños y restablecer la seguridad vial", value: "c" },
+                    { text: "Grabar el suceso para tener pruebas", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "¿Quién es responsable si un pasajero de motocicleta no lleva el casco homologado de protección?",
+                options: [
+                    { text: "El pasajero, si es mayor de edad", value: "a" },
+                    { text: "El titular del seguro del vehículo", value: "b" },
+                    { text: "Ambos, conductor y pasajero solidariamente", value: "c" },
+                    { text: "El conductor del vehículo", value: "d" }
+                ],
+                correctAnswer: "d"
+            },
+            {
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "¿Qué distancia lateral mínima debe mantener un conductor al adelantar a un ciclista fuera de poblado, si la vía tiene un único carril por sentido?",
+                options: [
+                    { text: "1 metro", value: "a" },
+                    { text: "1,5 metros", value: "b" },
+                    { text: "2 metros", value: "c" },
+                    { text: "La que considere segura el conductor", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "¿Cuál es la infracción que comete una persona implicada en un accidente de tráfico que se niega a facilitar sus datos a los agentes o a la otra parte?",
+                options: [
+                    { text: "Delito de omisión del deber de socorro", value: "a" },
+                    { text: "Infracción administrativa grave según el art. 129.2 RGC", value: "b" },
+                    { text: "Infracción administrativa leve", value: "c" },
+                    { text: "No es una infracción si no hay heridos", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "Conducir vehículos que tengan instalados inhibidores de radares o cinemómetros u otros mecanismos encaminados a interferir en los sistemas de vigilancia del tráfico...",
+                options: [
+                    { text: "Retira 6 puntos del permiso", value: "a" },
+                    { text: "Retira 3 puntos del permiso", value: "b" },
+                    { text: "Es una infracción grave sin retirada de puntos", value: "c" },
+                    { text: "Solo es sancionable su uso, no su instalación", value: "d" }
                 ],
                 correctAnswer: "a"
             },
             {
-                category: "Tácticas Policiales", emoji: "👮",
-                questionText: "Según los tipos de intervención, pueden ser:",
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "VMP es:",
                 options: [
-                    { text: "Alto riesgo y riesgo moderado", value: "a" },
-                    { text: "Riesgo moderado y riesgo de alto nivel", value: "b" },
-                    { text: "Alto riesgo y riesgo desconocido", value: "c" },
-                    { text: "Riesgo bajo, medio y alto", value: "d"}
+                    { text: "Vehículo de una o más ruedas dotado de una única plaza y propulsado exclusivamente por motores eléctricos que pueden proporcionar al vehículo una velocidad máxima por diseño comprendida entre 6 y 25 km/h", value: "a" },
+                    { text: "Vehículo Motorizado Personal de hasta 50cc", value: "b" },
+                    { text: "Vehículo de Movilidad Pequeña, como bicicletas con asistencia", value: "c" },
+                    { text: "Vehículo Muy Peligroso, restringido en zonas urbanas", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "El conductor de un vehículo está obligado a someterse a las pruebas para la detección de alcohol o de la presencia de drogas en el organismo:",
+                options: [
+                    { text: "Todas son correctas", value: "a" },
+                    { text: "Solo si presenta síntomas evidentes de estar bajo su influencia", value: "b" },
+                    { text: "Únicamente si ha cometido una infracción", value: "c" },
+                    { text: "Cuando es requerido por un agente en un control preventivo", value: "d" } 
+                ],
+                correctAnswer: "a" 
+            },
+            {
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "La competencia para regular el uso del casco en VMP es de:",
+                options: [
+                    { text: "El Estado, mediante el Reglamento General de Circulación", value: "a" },
+                    { text: "Las Comunidades Autónomas", value: "b" },
+                    { text: "Los Ayuntamientos, mediante ordenanza municipal", value: "c" },
+                    { text: "La Dirección General de Tráfico exclusivamente", value: "d" }
+                ],
+                correctAnswer: "a" 
+            },
+            {
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "De los siguientes factores, ¿cuáles se conforman como los grandes retos de la movilidad actual?",
+                options: [
+                    { text: "Congestión y contaminación", value: "a" },
+                    { text: "Accidentes y aumento de la siniestralidad", value: "b" },
+                    { text: "Solo la contaminación atmosférica", value: "c" },
+                    { text: "Todas las respuestas son correctas (Congestión, contaminación, accidentes y aumento de la siniestralidad)", value: "d" }
+                ],
+                correctAnswer: "d"
+            },
+            {
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "De conformidad con la Ley 6/2011 de Movilidad de la Comunidad Valenciana, ¿cuáles son las características básicas de la movilidad?",
+                options: [
+                    { text: "Rapidez, economía y confort", value: "a" },
+                    { text: "Universalidad, gratuidad y eficiencia", value: "b" },
+                    { text: "Sostenibilidad, accesibilidad y seguridad", value: "c" },
+                    { text: "Innovación, tecnología y conectividad", value: "d" }
                 ],
                 correctAnswer: "c"
+            },
+            {
+                category: "Seguridad Vial", emoji: "🚦",
+                questionText: "Según el Reglamento General de Circulación, la señal efectuada por los agentes de circulación consistente en extender un brazo, o ambos horizontalmente...",
+                options: [
+                    { text: "Obliga a detenerse a todos los usuarios de la vía", value: "a" },
+                    { text: "Obliga a detenerse a los usuarios de la vía que se acerquen al agente desde cualquier dirección que corte la indicada por el brazo o brazos", value: "b" },
+                    { text: "Advierte de la proximidad de un peligro", value: "c" },
+                    { text: "Permite el paso a los vehículos que se aproximan de frente", value: "d" }
+                ],
+                correctAnswer: "b"
             }
         ];
 
@@ -1484,7 +1538,6 @@
                 console.error("Error: Pantalla no encontrada -", screenId);
             }
 
-            // Controlar visibilidad de la barra de progreso y clase en body para estilos móviles
             if (screenId === 'testScreen') {
                 globalProgressWrapperNavbar.style.display = 'block';
                 document.body.classList.add('test-mode-active');
@@ -1516,6 +1569,7 @@
 
         function populateTopicGrid() {
             const topics = [...new Set(allQuestions.map(q => q.category))];
+            console.log("Temas disponibles para selección:", topics); 
             topicGrid.innerHTML = '';
             topics.forEach(topic => {
                 const topicEmoji = allQuestions.find(q => q.category === topic)?.emoji || '📚';
