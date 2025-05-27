@@ -1123,7 +1123,7 @@
                 options: [
                     { text: "El número ONU.", value: "a" },
                     { text: "La designación oficial de transporte.", value: "b" },
-                    { text: "El número de licencia del conductor.", value: "c" }, // Según PDF
+                    { text: "El número de licencia del conductor.", value: "c" }, 
                     { text: "Clase, grupo de embalaje, número y descripción de bultos, cantidad total, nombre y dirección del expedidor y del destinatario.", value: "d" }
                 ],
                 correctAnswer: "c" 
@@ -1133,11 +1133,11 @@
                 questionText: "¿En qué caso no será necesario emitir un certificado de arrumazón separado para el contenedor?",
                 options: [
                     { text: "Cuando el conductor confirma verbalmente la correcta sujeción de la carga.", value: "a" },
-                    { text: "Cuando se inserta en la carta de porte una declaración que indique que la carga se efectuó conforme a los reglamentos aplicables y se identifique a la persona responsable del certificado de arrumazón.", value: "b" }, // PDF marca C
+                    { text: "Cuando se inserta en la carta de porte una declaración que indique que la carga se efectuó conforme a los reglamentos aplicables y se identifique a la persona responsable del certificado de arrumazón.", value: "b" }, 
                     { text: "Cuando el destinatario final acepta la carga sin inspección previa.", value: "c" },
                     { text: "Cuando el certificado de arrumazón se emite por la empresa de transporte de forma independiente.", value: "d" }
                 ],
-                correctAnswer: "b" // Corregido según la lógica más común, el PDF marcaba C que no parece correcto.
+                correctAnswer: "b" 
             },
             {
                 category: "Transporte de Mercancías", emoji: "🚚",
@@ -1183,7 +1183,7 @@
                 ],
                 correctAnswer: "a"
             },
-
+            
             // Tácticas Policiales (NUEVAS PREGUNTAS de Tactica Policial Ok.pdf)
             {
                 category: "Tácticas Policiales", emoji: "👮",
@@ -1213,7 +1213,7 @@
                 options: [
                     { text: "A una mala hidratación y fatiga muscular localizada.", value: "a" },
                     { text: "A un fallo en la unión neuromuscular que impide la relajación del músculo.", value: "b" },
-                    { text: "A replicar los movimientos con ambas manos (Reflejo interlímbico).", value: "c" }, // Opción C del PDF, con aclaración.
+                    { text: "A replicar los movimientos con ambas manos (Reflejo interlímbico).", value: "c" }, 
                     { text: "A un exceso de calcio en la sangre que estimula continuamente las fibras musculares.", value: "d" }
                 ],
                 correctAnswer: "c"
@@ -1286,23 +1286,23 @@
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "¿En cuál de las siguientes situaciones es MENOS indicado el uso prioritario de la 'parada en llamada'?",
+                questionText: "¿En cuál de las siguientes situaciones es MENOS indicado el uso prioritario de la 'parada en llamada'?", // Pregunta 11 del PDF, reformulada
                 options: [
                     { text: "Vehículo con ocupantes con conducta extraña.", value: "a" },
                     { text: "Vehículo con cristales tintados que impiden visibilidad.", value: "b" },
                     { text: "Furgonetas o camiones que levantan sospechas.", value: "c" },
-                    { text: "Actuación rutinaria trabajando en binomio con buena visibilidad.", value: "d" }
+                    { text: "Actuación rutinaria trabajando en binomio con buena visibilidad.", value: "d" } // H del PDF
                 ],
                 correctAnswer: "d" 
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "Respecto al control de sangrados y el porte de un torniquete por un agente:",
+                questionText: "Respecto al control de sangrados y el porte de un torniquete por un agente:", // Pregunta 12 del PDF
                 options: [
                     { text: "Depende del criterio y preferencia personal del agente.", value: "a" },
                     { text: "Solo es necesario en unidades especializadas como U.I.P o G.O.E.S.", value: "b" },
                     { text: "Es una recomendación médica, pero la formación es opcional.", value: "c" },
-                    { text: "Se considera esencial tener la formación obligatoria y adecuada para su uso.", value: "d" }
+                    { text: "Se debe tener formación obligatoria.", value: "d" } // D del PDF
                 ],
                 correctAnswer: "d"
             },
@@ -1343,7 +1343,7 @@
                 category: "Tácticas Policiales", emoji: "👮",
                 questionText: "En la intervención de vehículos, ¿qué conocemos como riesgo desconocido?",
                 options: [
-                    { text: "Aquel que no se conoce o no se puede evaluar completamente antes del contacto.", value: "a" },
+                    { text: "Aquel que no se conoce o no se puede evaluar completamente antes del contacto.", value: "a" }, // A del PDF
                     { text: "Riesgo controlado mediante protocolos estándar.", value: "b" },
                     { text: "Riesgo identificado previamente por la policía.", value: "c" },
                     { text: "Riesgo asociado a fallos mecánicos del vehículo.", value: "d" }
@@ -1355,7 +1355,7 @@
                 questionText: "En la intervención con vehículos, ¿qué conocemos como riesgo bajo?",
                 options: [
                     { text: "Riesgo que puede manejarse con medidas mínimas de precaución.", value: "a" },
-                    { text: "No existe el riesgo bajo; toda intervención tiene un riesgo inherente.", value: "b" },
+                    { text: "No existe el riesgo bajo; toda intervención tiene un riesgo inherente.", value: "b" }, // B del PDF
                     { text: "Riesgo que solo afecta al vehículo y no a las personas.", value: "c" },
                     { text: "Riesgo asociado a situaciones rutinarias sin amenaza aparente.", value: "d" }
                 ],
@@ -1538,6 +1538,172 @@
                     { text: "Permite el paso a los vehículos que se aproximan de frente", value: "d" }
                 ],
                 correctAnswer: "b"
+            },
+            // Psicología Aplicada a la Resolución de Conflicto
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "¿Qué consideraríamos un conflicto?",
+                options: [
+                    { text: "Es una situación en la que dos o más partes tienen intereses, necesidades, valores, creencias o objetos incompatibles o percibidos como tales, lo que genera tensión, desacuerdo o enfrentamiento.", value: "a" },
+                    { text: "Es un proceso de comunicación en el que ambas partes llegan a un acuerdo sin desacuerdos previos.", value: "b" },
+                    { text: "Es un evento donde todas las partes implicadas comparten los mismos objetivos y valores.", value: "c" },
+                    { text: "Es una forma de cooperación donde las diferencias se dejan de lado sin necesidad de resolverlas.", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "Indica dentro de los conflictos cual se consideraría una intensificación del enfrentamiento:",
+                options: [
+                    { text: "Escalada", value: "a" },
+                    { text: "Estancamiento", value: "b" },
+                    { text: "Desescalada", value: "c" },
+                    { text: "Resolución", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "Indica dentro de los conflictos cual se consideraría un bloqueo cuando las partes se aferran a sus posiciones:",
+                options: [
+                    { text: "Escalada", value: "a" },
+                    { text: "Estancamiento", value: "b" },
+                    { text: "Desescalada", value: "c" },
+                    { text: "Negociación", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "Indica dentro de los conflictos cual se consideraría una reducción de la tensión gracias a negociaciones:",
+                options: [
+                    { text: "Escalada", value: "a" },
+                    { text: "Estancamiento", value: "b" },
+                    { text: "Desescalada", value: "c" },
+                    { text: "Confrontación", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "Respecto a los orígenes del conflicto, cual consideraríamos aquel que te hace falta:",
+                options: [
+                    { text: "Conflicto de intereses", value: "a" },
+                    { text: "Conflicto de valores", value: "b" },
+                    { text: "Conflicto de necesidades", value: "c" },
+                    { text: "Conflicto de recursos", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "Respecto a los orígenes del conflicto, cual consideraríamos por aquello que deseamos o aspiramos:",
+                options: [
+                    { text: "Conflicto de intereses", value: "a" },
+                    { text: "Conflicto de valores", value: "b" },
+                    { text: "Conflicto de necesidades", value: "c" },
+                    { text: "Conflicto de percepciones", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "Respecto a los orígenes del conflicto, cual consideraríamos que es importante para uno mismo:",
+                options: [
+                    { text: "Conflicto de intereses", value: "a" },
+                    { text: "Conflicto de valores", value: "b" },
+                    { text: "Conflicto de necesidades", value: "c" },
+                    { text: "Conflicto estructural", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "Dentro de los conflictos encontramos partes involucradas, aquellos problemas que se genera uno mismo sería:",
+                options: [
+                    { text: "Conflicto intrapersonal", value: "a" },
+                    { text: "Conflicto grupal", value: "b" },
+                    { text: "Conflicto interpersonal", value: "c" },
+                    { text: "Conflicto social", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "Dentro de los conflictos encontramos partes involucradas, aquellos problemas que ocurren entre dos o más personas cuando existen desacuerdos:",
+                options: [
+                    { text: "Conflicto intrapersonal", value: "a" },
+                    { text: "Conflicto grupal", value: "b" },
+                    { text: "Conflicto interpersonal", value: "c" },
+                    { text: "Conflicto organizacional", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "Dentro de las formas básicas de resolución de conflictos, cual sería aquel en el que el mediador es imparcial:",
+                options: [
+                    { text: "Negociación", value: "a" },
+                    { text: "Mediación", value: "b" },
+                    { text: "Conciliación", value: "c" },
+                    { text: "Arbitraje", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "Dentro de las formas básicas de resolución de conflictos, cual sería aquel en el que es dos o más partes intentan buscar un acuerdo y solo participan las personas implicadas:",
+                options: [
+                    { text: "Negociación", value: "a" },
+                    { text: "Mediación", value: "b" },
+                    { text: "Conciliación", value: "c" },
+                    { text: "Litigio", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "Dentro de las formas básicas de resolución de conflictos, cual sería aquel en el que un tercero propone soluciones a un conflicto:",
+                options: [
+                    { text: "Negociación", value: "a" },
+                    { text: "Mediación", value: "b" },
+                    { text: "Conciliación", value: "c" },
+                    { text: "Juicio", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "¿Qué función debe tener un policía?",
+                options: [
+                    { text: "Mantener el control de la situación", value: "a" },
+                    { text: "Participar activamente en el conflicto", value: "b" },
+                    { text: "Tomar partido por una de las partes", value: "c" },
+                    { text: "Ignorar el problema hasta que se resuelva solo", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "Indica cuál sería la definición de empatía:",
+                options: [
+                    { text: "Capacidad de resolver conflictos mediante la imposición de autoridad.", value: "a" },
+                    { text: "Actitud de mantenerse neutral y no involucrarse en las emociones ajenas.", value: "b" },
+                    { text: "Habilidad social de ponerse en el lugar del otro, comprendiendo sus emociones y perspectivas, aunque no se compartan.", value: "c" },
+                    { text: "Aptitud para convencer a otros de cambiar sus opiniones sin importar sus sentimientos.", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Psicología de Conflictos", emoji: "🧠",
+                questionText: "Consideraríamos escucha activa a:",
+                options: [
+                    { text: "Prestar atención únicamente a las palabras que dice el interlocutor.", value: "a" },
+                    { text: "La habilidad social que consiste en prestar atención real al interlocutor, no solo a sus palabras, sino también a su tono, lenguaje corporal y emociones.", value: "b" },
+                    { text: "Escuchar sin hacer preguntas ni mostrar interés.", value: "c" },
+                    { text: "Interrumpir para dar tu opinión antes de que termine de hablar.", value: "d" }
+                ],
+                correctAnswer: "b" // El PDF marca C, pero B es la definición correcta de escucha activa.
             }
         ];
 
