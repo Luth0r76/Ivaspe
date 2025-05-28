@@ -1405,7 +1405,7 @@
                     { text: "El vehículo a motor de combustión (Benz Patent-Motorwagen)", value: "c" },
                     { text: "El primer coche eléctrico", value: "d" }
                 ],
-                correctAnswer: "b"
+                correctAnswer: "c" 
             },
             {
                 category: "Seguridad Vial", emoji: "🚦",
@@ -1735,7 +1735,7 @@
                     { text: "Proteger, Atacar, Socorrer", value: "a" },
                     { text: "Prevenir, Ayudar, Socorrer", value: "b" },
                     { text: "Parar, Avisar, Salvar", value: "c" },
-                    { text: "Proteger, Avisar, Socorrer", value: "d" } // Corregido según el estándar
+                    { text: "Proteger, Avisar, Socorrer", value: "d" } 
                 ],
                 correctAnswer: "d"
             },
@@ -1746,7 +1746,7 @@
                     { text: "Dar un golpe en la espalda", value: "a" },
                     { text: "Pedir ayuda sin verificar la situación", value: "b" },
                     { text: "Levantarla rápidamente", value: "c" },
-                    { text: "Toque de hombros y hablarle en voz alta", value: "d" } // Más completo
+                    { text: "Toque de hombros y hablarle en voz alta", value: "d" } 
                 ],
                 correctAnswer: "d"
             },
@@ -1754,7 +1754,7 @@
                 category: "Primeros Auxilios", emoji: "⚕️",
                 questionText: "Al comprobar la respiración, que tiempo de comprobación tenemos:",
                 options: [
-                    { text: "No más de 10 segundos (ver, oír, sentir)", value: "a" }, // Más preciso
+                    { text: "No más de 10 segundos (ver, oír, sentir)", value: "a" }, 
                     { text: "10 a 20 segundo", value: "b" },
                     { text: "15 a 20 segundos", value: "c" },
                     { text: "1 a 5 segundos", value: "d" }
@@ -1776,7 +1776,7 @@
                 category: "Primeros Auxilios", emoji: "⚕️",
                 questionText: "Indica en un paciente adulto cuál sería la profundidad torácica, al realizar una compresión:",
                 options: [
-                    { text: "Entre 4 cm y 5 cm", value: "a" }, // Ajustado para más opciones
+                    { text: "Entre 4 cm y 5 cm", value: "a" }, 
                     { text: "Exactamente 4 cm", value: "b" },
                     { text: "Entre 5 cm y 6 cm", value: "c" },
                     { text: "Menos de 3 cm", value: "d" }
@@ -1810,8 +1810,8 @@
                 questionText: "¿Cuándo finaliza una RCP?",
                 options: [
                     { text: "Cuando la persona no responde en los primeros 30 segundos", value: "a" },
-                    { text: "Cuando el reanimador se cansa y no hay relevo", value: "b" }, // Más preciso
-                    { text: "Hasta que lleguen los servicios sanitarios o la víctima muestre signos de vida", value: "c" }, // Más completo
+                    { text: "Cuando el reanimador se cansa y no hay relevo", value: "b" }, 
+                    { text: "Hasta que lleguen los servicios sanitarios o la víctima muestre signos de vida", value: "c" }, 
                     { text: "Después de 2 minutos sin respuesta", value: "d" }
                 ],
                 correctAnswer: "c"
@@ -1825,7 +1825,7 @@
                     { text: "20 compresiones / 2 ventilaciones", value: "c" },
                     { text: "10 compresiones / 1 ventilación", value: "d" }
                 ],
-                correctAnswer: "b" // Para un solo reanimador en niños, se suele recomendar 30:2 para simplificar y no retrasar compresiones.
+                correctAnswer: "b" 
             },
             {
                 category: "Primeros Auxilios", emoji: "⚕️",
@@ -1837,6 +1837,73 @@
                     { text: "10 compresiones / 1 ventilación", value: "d" }
                 ],
                 correctAnswer: "a"
+            },
+            // Protección Portuaria
+            {
+                category: "Protección Portuaria", emoji: "🛡️",
+                questionText: "¿Por qué se legisló el Código P.B.I.P (ISPS)?",
+                options: [
+                    { text: "La necesidad de modernizar los puertos comerciales a nivel mundial.", value: "a" },
+                    { text: "Un acuerdo entre países para mejorar la logística marítima.", value: "b" },
+                    { text: "La implementación de nuevas tecnologías en la navegación internacional.", value: "c" },
+                    { text: "Fue una respuesta internacional debido al 11-S de Estados Unidos.", value: "d" }
+                ],
+                correctAnswer: "d"
+            },
+            {
+                category: "Protección Portuaria", emoji: "🛡️",
+                questionText: "Las medidas especiales para incrementar la protección marítima (PBIP) serán de aplicación, indica la respuesta incorrecta:",
+                options: [
+                    { text: "Los buques de pasaje, incluidas las naves de pasaje de gran velocidad, dedicados a viajes internacionales.", value: "a" },
+                    { text: "Los buques de carga, incluidas las naves de gran velocidad, de arqueo bruto igual o superior a 500, dedicados a viajes internacionales.", value: "b" },
+                    { text: "Las unidades móviles de perforación mar adentro.", value: "c" },
+                    { text: "Naves auxiliares que no realizan viajes internacionales.", value: "d" } // Modificado para ser la incorrecta según el contexto
+                ],
+                correctAnswer: "d" // El PDF indica 'E' que no existe como opción, asumo que 'Naves auxiliares' es la incorrecta en el contexto de aplicación del PBIP.
+            },
+            {
+                category: "Protección Portuaria", emoji: "🛡️",
+                questionText: "¿Qué definiríamos como Declaración de Protección Marítima?",
+                options: [
+                    { text: "Documento oficial emitido por la autoridad portuaria que autoriza la entrada de un buque.", value: "a" },
+                    { text: "Informe de inspección que certifica el cumplimiento de normas ambientales en un buque.", value: "b" },
+                    { text: "Acuerdo alcanzado entre un buque y una instalación portuaria u otro buque con el que realiza operaciones de interfaz, en el que se especifican las medidas de protección que aplicará cada uno.", value: "c" },
+                    { text: "Registro de carga y descarga utilizado para operaciones aduaneras en puertos internacionales.", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Protección Portuaria", emoji: "🛡️",
+                questionText: "Cuando podrá un buque solicitar que se cumplimente una declaración de protección, indica cual es la respuesta incorrecta:",
+                options: [
+                    { text: "Cuando el buque funcione a nivel de protección más elevado que la instalación portuaria u otro buque con el que esté realizando una operación de interfaz.", value: "a" },
+                    { text: "Se haya producido una amenaza o un suceso que afecte a la protección marítima en relación con el buque o en relación con la instalación portuaria.", value: "b" },
+                    { text: "Cuando el buque funcione a nivel de protección menos elevado que la instalación portuaria u otro buque con el que esté realizando una operación de interfaz.", value: "c" },
+                    { text: "Cuando el buque tiene previsto realizar una escala rutinaria sin incidentes.", value: "d" } // Opción añadida como incorrecta
+                ],
+                correctAnswer: "c" // El PDF indica C como incorrecta, lo que significa que en ese caso SÍ se solicita. La pregunta pide la incorrecta para solicitar.
+            },
+            {
+                category: "Protección Portuaria", emoji: "🛡️",
+                questionText: "¿Cada cuánto se debe revisar una Evaluación de Protección del Puerto?",
+                options: [
+                    { text: "Cada año, coincidiendo con la auditoría interna del puerto.", value: "a" },
+                    { text: "Cada 10 años, salvo que lo indique la autoridad marítima.", value: "b" },
+                    { text: "Cada 5 años y siempre que se haya producido un suceso o modificaciones que lo aconsejen.", value: "c" },
+                    { text: "Solo cuando se realicen obras estructurales en el puerto.", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Protección Portuaria", emoji: "🛡️",
+                questionText: "¿Qué ocurre si un buque tiene un nivel de protección inferior al de la instalación portuaria?",
+                options: [
+                    { text: "Se le permitirá el acceso, pero bajo supervisión del capitán del puerto.", value: "a" },
+                    { text: "Podrá operar normalmente si presenta una Declaración de Protección Marítima.", value: "b" },
+                    { text: "No se admitirá en el puerto.", value: "c" },
+                    { text: "Se le autoriza el acceso solo si reduce su velocidad de maniobra y activa vigilancia adicional.", value: "d" }
+                ],
+                correctAnswer: "c"
             }
         ];
 
