@@ -1286,23 +1286,23 @@
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "¿En cuál de las siguientes situaciones es MENOS indicado el uso prioritario de la 'parada en llamada'?", // Pregunta 11 del PDF, reformulada
+                questionText: "¿En cuál de las siguientes situaciones es MENOS indicado el uso prioritario de la 'parada en llamada'?", 
                 options: [
                     { text: "Vehículo con ocupantes con conducta extraña.", value: "a" },
                     { text: "Vehículo con cristales tintados que impiden visibilidad.", value: "b" },
                     { text: "Furgonetas o camiones que levantan sospechas.", value: "c" },
-                    { text: "Actuación rutinaria trabajando en binomio con buena visibilidad.", value: "d" } // H del PDF
+                    { text: "Actuación rutinaria trabajando en binomio con buena visibilidad.", value: "d" } 
                 ],
                 correctAnswer: "d" 
             },
             {
                 category: "Tácticas Policiales", emoji: "👮",
-                questionText: "Respecto al control de sangrados y el porte de un torniquete por un agente:", // Pregunta 12 del PDF
+                questionText: "Respecto al control de sangrados y el porte de un torniquete por un agente:", 
                 options: [
                     { text: "Depende del criterio y preferencia personal del agente.", value: "a" },
                     { text: "Solo es necesario en unidades especializadas como U.I.P o G.O.E.S.", value: "b" },
                     { text: "Es una recomendación médica, pero la formación es opcional.", value: "c" },
-                    { text: "Se debe tener formación obligatoria.", value: "d" } // D del PDF
+                    { text: "Se debe tener formación obligatoria.", value: "d" } 
                 ],
                 correctAnswer: "d"
             },
@@ -1343,7 +1343,7 @@
                 category: "Tácticas Policiales", emoji: "👮",
                 questionText: "En la intervención de vehículos, ¿qué conocemos como riesgo desconocido?",
                 options: [
-                    { text: "Aquel que no se conoce o no se puede evaluar completamente antes del contacto.", value: "a" }, // A del PDF
+                    { text: "Aquel que no se conoce o no se puede evaluar completamente antes del contacto.", value: "a" }, 
                     { text: "Riesgo controlado mediante protocolos estándar.", value: "b" },
                     { text: "Riesgo identificado previamente por la policía.", value: "c" },
                     { text: "Riesgo asociado a fallos mecánicos del vehículo.", value: "d" }
@@ -1355,7 +1355,7 @@
                 questionText: "En la intervención con vehículos, ¿qué conocemos como riesgo bajo?",
                 options: [
                     { text: "Riesgo que puede manejarse con medidas mínimas de precaución.", value: "a" },
-                    { text: "No existe el riesgo bajo; toda intervención tiene un riesgo inherente.", value: "b" }, // B del PDF
+                    { text: "No existe el riesgo bajo; toda intervención tiene un riesgo inherente.", value: "b" }, 
                     { text: "Riesgo que solo afecta al vehículo y no a las personas.", value: "c" },
                     { text: "Riesgo asociado a situaciones rutinarias sin amenaza aparente.", value: "d" }
                 ],
@@ -1405,7 +1405,7 @@
                     { text: "El vehículo a motor de combustión (Benz Patent-Motorwagen)", value: "c" },
                     { text: "El primer coche eléctrico", value: "d" }
                 ],
-                correctAnswer: "c"
+                correctAnswer: "b"
             },
             {
                 category: "Seguridad Vial", emoji: "🚦",
@@ -1703,7 +1703,140 @@
                     { text: "Escuchar sin hacer preguntas ni mostrar interés.", value: "c" },
                     { text: "Interrumpir para dar tu opinión antes de que termine de hablar.", value: "d" }
                 ],
-                correctAnswer: "b" // El PDF marca C, pero B es la definición correcta de escucha activa.
+                correctAnswer: "b" 
+            },
+            // Primeros Auxilios
+            {
+                category: "Primeros Auxilios", emoji: "⚕️",
+                questionText: "Que consideraríamos una Urgencia:",
+                options: [
+                    { text: "Cualquier situación a que a criterio del paciente requiere asistencia sanitaria.", value: "a" },
+                    { text: "Comprende la vida del paciente.", value: "b" },
+                    { text: "Una lesión menor que puede esperar.", value: "c" },
+                    { text: "Una situación que no requiere atención médica inmediata.", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Primeros Auxilios", emoji: "⚕️",
+                questionText: "Que consideraríamos una Emergencia:",
+                options: [
+                    { text: "Cualquier situación a que a criterio del paciente requiere asistencia sanitaria.", value: "a" },
+                    { text: "Comprende la vida del paciente.", value: "b" },
+                    { text: "Una molestia leve sin riesgo vital.", value: "c" },
+                    { text: "Una situación que puede ser atendida en consulta programada.", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Primeros Auxilios", emoji: "⚕️",
+                questionText: "¿Qué definiría la abreviatura respecto a primeros auxilios, PAS?",
+                options: [
+                    { text: "Proteger, Atacar, Socorrer", value: "a" },
+                    { text: "Prevenir, Ayudar, Socorrer", value: "b" },
+                    { text: "Parar, Avisar, Salvar", value: "c" },
+                    { text: "Proteger, Avisar, Socorrer", value: "d" } // Corregido según el estándar
+                ],
+                correctAnswer: "d"
+            },
+            {
+                category: "Primeros Auxilios", emoji: "⚕️",
+                questionText: "Dentro del algoritmo de actuación que marca el procedimiento, ¿qué haríamos al comprobar una inconsciencia?",
+                options: [
+                    { text: "Dar un golpe en la espalda", value: "a" },
+                    { text: "Pedir ayuda sin verificar la situación", value: "b" },
+                    { text: "Levantarla rápidamente", value: "c" },
+                    { text: "Toque de hombros y hablarle en voz alta", value: "d" } // Más completo
+                ],
+                correctAnswer: "d"
+            },
+            {
+                category: "Primeros Auxilios", emoji: "⚕️",
+                questionText: "Al comprobar la respiración, que tiempo de comprobación tenemos:",
+                options: [
+                    { text: "No más de 10 segundos (ver, oír, sentir)", value: "a" }, // Más preciso
+                    { text: "10 a 20 segundo", value: "b" },
+                    { text: "15 a 20 segundos", value: "c" },
+                    { text: "1 a 5 segundos", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Primeros Auxilios", emoji: "⚕️",
+                questionText: "Si la persona afectada no respira y es un adulto, una vez hemos llamado al número de emergencias 112, le realizaremos una RCP. Indica qué relación compresión/respiración sería la correcta:",
+                options: [
+                    { text: "15 compresiones / 5 ventilaciones", value: "a" },
+                    { text: "30 compresiones / 2 ventilaciones", value: "b" },
+                    { text: "20 compresiones / 1 ventilación", value: "c" },
+                    { text: "10 compresiones / 3 ventilaciones", value: "d" }
+                ],
+                correctAnswer: "b"
+            },
+            {
+                category: "Primeros Auxilios", emoji: "⚕️",
+                questionText: "Indica en un paciente adulto cuál sería la profundidad torácica, al realizar una compresión:",
+                options: [
+                    { text: "Entre 4 cm y 5 cm", value: "a" }, // Ajustado para más opciones
+                    { text: "Exactamente 4 cm", value: "b" },
+                    { text: "Entre 5 cm y 6 cm", value: "c" },
+                    { text: "Menos de 3 cm", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Primeros Auxilios", emoji: "⚕️",
+                questionText: "Al realizar RCP a una persona adulta, indica la frecuencia torácica:",
+                options: [
+                    { text: "Entre 100-120/min", value: "a" },
+                    { text: "Entre 60-80/min", value: "b" },
+                    { text: "Entre 130-150/min", value: "c" },
+                    { text: "Entre 70-90/min", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Primeros Auxilios", emoji: "⚕️",
+                questionText: "¿Cada cuánto es recomendable cambiar la posición de las compresiones si estamos dos reanimadores, en una persona adulta?",
+                options: [
+                    { text: "Cada 5 minutos", value: "a" },
+                    { text: "Cada 10 minutos", value: "b" },
+                    { text: "Cada 1 minuto", value: "c" },
+                    { text: "Cada 2 minutos", value: "d" }
+                ],
+                correctAnswer: "d"
+            },
+            {
+                category: "Primeros Auxilios", emoji: "⚕️",
+                questionText: "¿Cuándo finaliza una RCP?",
+                options: [
+                    { text: "Cuando la persona no responde en los primeros 30 segundos", value: "a" },
+                    { text: "Cuando el reanimador se cansa y no hay relevo", value: "b" }, // Más preciso
+                    { text: "Hasta que lleguen los servicios sanitarios o la víctima muestre signos de vida", value: "c" }, // Más completo
+                    { text: "Después de 2 minutos sin respuesta", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Primeros Auxilios", emoji: "⚕️",
+                questionText: "Cuando estamos realizando compresiones a un niño y solo hay un reanimador, ¿cuál debe ser la relación de compresión/ventilación?",
+                options: [
+                    { text: "15 compresiones / 2 ventilaciones", value: "a" },
+                    { text: "30 compresiones / 2 ventilaciones", value: "b" },
+                    { text: "20 compresiones / 2 ventilaciones", value: "c" },
+                    { text: "10 compresiones / 1 ventilación", value: "d" }
+                ],
+                correctAnswer: "b" // Para un solo reanimador en niños, se suele recomendar 30:2 para simplificar y no retrasar compresiones.
+            },
+            {
+                category: "Primeros Auxilios", emoji: "⚕️",
+                questionText: "Cuando estamos realizando compresiones a un niño y hay dos reanimadores, ¿cuál debe ser la relación de compresión/ventilación?",
+                options: [
+                    { text: "15 compresiones / 2 ventilaciones", value: "a" },
+                    { text: "30 compresiones / 2 ventilaciones", value: "b" },
+                    { text: "20 compresiones / 2 ventilaciones", value: "c" },
+                    { text: "10 compresiones / 1 ventilación", value: "d" }
+                ],
+                correctAnswer: "a"
             }
         ];
 
