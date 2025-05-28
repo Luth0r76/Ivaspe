@@ -1857,9 +1857,9 @@
                     { text: "Los buques de pasaje, incluidas las naves de pasaje de gran velocidad, dedicados a viajes internacionales.", value: "a" },
                     { text: "Los buques de carga, incluidas las naves de gran velocidad, de arqueo bruto igual o superior a 500, dedicados a viajes internacionales.", value: "b" },
                     { text: "Las unidades móviles de perforación mar adentro.", value: "c" },
-                    { text: "Naves auxiliares que no realizan viajes internacionales.", value: "d" } // Modificado para ser la incorrecta según el contexto
+                    { text: "Naves auxiliares que no realizan viajes internacionales.", value: "d" } 
                 ],
-                correctAnswer: "d" // El PDF indica 'E' que no existe como opción, asumo que 'Naves auxiliares' es la incorrecta en el contexto de aplicación del PBIP.
+                correctAnswer: "d" 
             },
             {
                 category: "Protección Portuaria", emoji: "🛡️",
@@ -1879,9 +1879,9 @@
                     { text: "Cuando el buque funcione a nivel de protección más elevado que la instalación portuaria u otro buque con el que esté realizando una operación de interfaz.", value: "a" },
                     { text: "Se haya producido una amenaza o un suceso que afecte a la protección marítima en relación con el buque o en relación con la instalación portuaria.", value: "b" },
                     { text: "Cuando el buque funcione a nivel de protección menos elevado que la instalación portuaria u otro buque con el que esté realizando una operación de interfaz.", value: "c" },
-                    { text: "Cuando el buque tiene previsto realizar una escala rutinaria sin incidentes.", value: "d" } // Opción añadida como incorrecta
+                    { text: "Cuando el buque tiene previsto realizar una escala rutinaria sin incidentes.", value: "d" } 
                 ],
-                correctAnswer: "c" // El PDF indica C como incorrecta, lo que significa que en ese caso SÍ se solicita. La pregunta pide la incorrecta para solicitar.
+                correctAnswer: "c" 
             },
             {
                 category: "Protección Portuaria", emoji: "🛡️",
@@ -1904,6 +1904,117 @@
                     { text: "Se le autoriza el acceso solo si reduce su velocidad de maniobra y activa vigilancia adicional.", value: "d" }
                 ],
                 correctAnswer: "c"
+            },
+            // Investigación de Siniestros Viales
+            {
+                category: "Investigación de Siniestros Viales", emoji: "🕵️‍♂️",
+                questionText: "Cuando se produzca un accidente de tráfico con lesión, se instruye atestado cuando, indica la respuesta incorrecta:",
+                options: [
+                    { text: "Infracción grave o menos grave art 76-77", value: "a" },
+                    { text: "Lesión constitutiva de delito", value: "b" },
+                    { text: "Relación de causalidad", value: "c" },
+                    { text: "Infracción leve", value: "d" }
+                ],
+                correctAnswer: "d"
+            },
+            {
+                category: "Investigación de Siniestros Viales", emoji: "🕵️‍♂️",
+                questionText: "A qué tipo de Delitos consideraríamos imprudencia con lesiones:",
+                options: [
+                    { text: "Menos graves o graves", value: "a" },
+                    { text: "Leves o menos graves", value: "b" },
+                    { text: "Únicamente leves", value: "c" },
+                    { text: "Todas las anteriores", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Investigación de Siniestros Viales", emoji: "🕵️‍♂️",
+                questionText: "¿Cómo se tramitan las lesiones cometidas con imprudencia grave?",
+                options: [
+                    { text: "De oficio.", value: "a" },
+                    { text: "Solo a petición de la víctima mediante denuncia previa.", value: "b" },
+                    { text: "Mediante querella presentada por el Ministerio Fiscal.", value: "c" },
+                    { text: "A solicitud del juez de guardia tras la evaluación médica.", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Investigación de Siniestros Viales", emoji: "🕵️‍♂️",
+                questionText: "¿Cómo se tramitan las lesiones cometidas con imprudencia menos grave?",
+                options: [
+                    { text: "A instancia de parte (denuncia previa del perjudicado).", value: "a" }, // Más preciso
+                    { text: "Siempre de oficio por la autoridad.", value: "b" },
+                    { text: "Mediante querella presentada por el Ministerio Fiscal.", value: "c" },
+                    { text: "A solicitud del juez de guardia tras la evaluación médica.", value: "d" }
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Investigación de Siniestros Viales", emoji: "🕵️‍♂️",
+                questionText: "¿Cuáles son los principales factores que intervienen en un siniestro vial?",
+                options: [
+                    { text: "Factores económicos, políticos y sociales.", value: "a" },
+                    { text: "Estado de ánimo del conductor y señalización luminosa.", value: "b" },
+                    { text: "Factor humano, mecánico, ambiental y normativo.", value: "c" },
+                    { text: "Tiempo atmosférico, número de pasajeros y tipo de combustible.", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Investigación de Siniestros Viales", emoji: "🕵️‍♂️",
+                questionText: "¿Cuál es la definición de accidente o siniestro vial?",
+                options: [
+                    { text: "Cualquier choque entre vehículos que ocurra en una vía pública y cause daños materiales.", value: "a" },
+                    { text: "Evento provocado por el mal estado de la vía o las condiciones climáticas que afecta a vehículos en circulación.", value: "b" },
+                    { text: "Hecho imprevisto en el que participan vehículos, generalmente sin consecuencias graves.", value: "c" },
+                    { text: "Todo hecho no intencional originado o con participación de al menos un vehículo en circulación, que causa daños a personas, animales, vehículos, bienes públicos o privados, y ocurre en vías abiertas al tránsito.", value: "d" }
+                ],
+                correctAnswer: "d"
+            },
+            {
+                category: "Investigación de Siniestros Viales", emoji: "🕵️‍♂️",
+                questionText: "¿Cómo se clasifican los siniestros viales en los que solo interviene una unidad de tráfico, como choques contra obstáculos o elementos fijos?",
+                options: [
+                    { text: "Complejos", value: "a" },
+                    { text: "Choques múltiples", value: "b" }, // Opción añadida
+                    { text: "Simples", value: "c" },
+                    { text: "Atropellos", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Investigación de Siniestros Viales", emoji: "🕵️‍♂️",
+                questionText: "¿Cómo se clasifican los siniestros viales en los que están implicadas dos o más unidades de tráfico?:",
+                options: [
+                    { text: "Complejos", value: "a" },
+                    { text: "Colisiones", value: "b" }, // Opción añadida, más específica que "Choques"
+                    { text: "Simples", value: "c" },
+                    { text: "Salidas de vía", value: "d" } // Opción añadida
+                ],
+                correctAnswer: "a"
+            },
+            {
+                category: "Investigación de Siniestros Viales", emoji: "🕵️‍♂️",
+                questionText: "¿Cómo se denomina al tipo de siniestro en el que un vehículo gira sobre su eje transversal?:",
+                options: [
+                    { text: "Vuelco de tonel", value: "a" },
+                    { text: "Giro axial", value: "b" },
+                    { text: "Vuelco de campana", value: "c" },
+                    { text: "Trompo", value: "d" }
+                ],
+                correctAnswer: "c"
+            },
+            {
+                category: "Investigación de Siniestros Viales", emoji: "🕵️‍♂️",
+                questionText: "¿Cómo se denomina al tipo de siniestro en el que el vehículo gira sobre su eje longitudinal?:",
+                options: [
+                    { text: "Vuelco de tonel", value: "a" },
+                    { text: "Giro axial", value: "b" },
+                    { text: "Vuelco de campana", value: "c" },
+                    { text: "Derrape", value: "d" } // Opción añadida
+                ],
+                correctAnswer: "a"
             }
         ];
 
